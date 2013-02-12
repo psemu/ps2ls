@@ -1,0 +1,2472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Object Class="MaterialDefinitionCollection">
+
+
+
+
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <!-- /////////////////////////////////////////////////////////////      INPUT LAYOUTS     /////////////////////////////////////////////////////////////////////////-->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  
+    <Array Name="InputLayouts">
+        <Object Class="InputLayout" Name="NULL">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Position">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Color">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ColorUV">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ClrNrmUV">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Normal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="BumpUVInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float2" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="2" Type="D3dcolor" Usage="Texcoord" UsageIndex="3" />
+                <Object Class="LayoutEntry" Stream="2" Type="D3dcolor" Usage="Texcoord" UsageIndex="4" />
+                <Object Class="LayoutEntry" Stream="2" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="BumpUVSkin">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="BlendWeight" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="BumpUVRigid">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="BumpRigid">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="float16_2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="BumpRigidInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="7" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="8" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="9" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Terrain">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Normal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Short2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="TerrainLod0">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Texcoord" UsageIndex="2" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="TerrainLod">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Flora">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float1" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Normal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="FloraModel">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+    <Object Class="InputLayout" Name="FloraModelInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float4" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Texcoord" UsageIndex="3" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Texcoord" UsageIndex="4" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Post">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float4" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="DebugText">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="FontPrimitive">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short4" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short4" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Billboard">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float2" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="SpriteParticle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float1" Usage="Texcoord" UsageIndex="3" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float1" Usage="Texcoord" UsageIndex="4" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ApexSpriteParticle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ApexDistortParticle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ApexStreakParticle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="BeamParticle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float1" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float1" Usage="Texcoord" UsageIndex="3" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="StreakParticle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Short2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float1" Usage="Texcoord" UsageIndex="3" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float1" Usage="Texcoord" UsageIndex="4" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="5" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="SimpleEmissive">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="float16_2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="TexProj">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float3" Usage="Texcoord" UsageIndex="3" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ProjDecal">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="3" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Texcoord" UsageIndex="4" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="5" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="6" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="NewSatellite">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="Float2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Designer">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Normal" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="DesignerInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Normal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="7" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="8" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="9" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Foliage">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="FoliageInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="5" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="6" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="7" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Trunk">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="TrunkInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="D3dcolor" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="5" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="6" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="7" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="TwoSided">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="TwoSidedInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="7" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="8" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="9" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Structure">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="2" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Glow">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="2" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="StructureInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="2" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="7" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="8" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="9" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="StructureDecal">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Normal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="StructureTint">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="StructureWsOverlay">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Object">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Position" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Normal" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ObjectInstanced">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Position" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Normal" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Color" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="7" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="8" />
+                <Object Class="LayoutEntry" Stream="2" Type="Float4" Usage="Texcoord" UsageIndex="9" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Vehicle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="Character">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="ubyte4n" Usage="BlendWeight" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="CharacterRigid">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="TankTread">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="ubyte4n" Usage="BlendWeight" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="1" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Color" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="ForceField">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Normal" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="Float16_2" Usage="Texcoord" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="DebugObject">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="DebugVehicle">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Tangent" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="1" Type="ubyte4n" Usage="Binormal" UsageIndex="0" />
+            </Array>
+        </Object>
+        <Object Class="InputLayout" Name="DebugCharacter">
+            <Array Name="Entries">
+                <Object Class="LayoutEntry" Stream="0" Type="Float3" Usage="Position" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="ubyte4n" Usage="BlendWeight" UsageIndex="0" />
+                <Object Class="LayoutEntry" Stream="0" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+            </Array>
+        </Object>
+    </Array>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <!-- /////////////////////////////////////////////////////////////    PARAMETER GROUPS    /////////////////////////////////////////////////////////////////////////-->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  
+  
+    <Array Name="ParameterGroups">
+        <Object Class="ParameterGroup" Name="Application">
+            <Array Name="Parameters">
+              
+                <!-- FullscreenEffects (1) -->
+                <Object Class="IntParameter"    Name="FullScreenEffectID_1" Variable="FullScreenEffectID_1" Default="0" />
+                    <!-- Depth Of Field -->
+                    <Object Class="FloatParameter"  Name="DepthOfFieldTransition" Variable="DepthOfFieldTransition" Default="0" />
+                    <!-- Thermal Vision -->
+                    <Object Class="Float4Parameter"  Name="ThermalViewRange" Variable="ThermalViewRange" Default="0,50,0,0" />
+                    <Object Class="Float4Parameter"  Name="InfraRedViewRange" Variable="InfraRedViewRange" Default="0,100,0,0" />
+                    <Object Class="Float4Parameter"  Name="ThermalColor" Variable="ThermalColor" Default="1,0,0,0" />
+                    <Object Class="Float4Parameter"  Name="InfraRedColor" Variable="InfraRedColor" Default="1,1,1,0" />
+                    <Object Class="FloatParameter"   Name="ThermalViewFade" Variable="ThermalViewFade" Default="1" />
+                    <Object Class="FloatParameter"   Name="ThermalWhitePoint" Variable="ThermalWhitePoint" Default="0" />
+                    <Object Class="FloatParameter"   Name="InfraRedWhitePoint" Variable="InfraRedWhitePoint" Default="0" />
+                    <Object Class="FloatParameter"   Name="InfraRedScanLines" Variable="InfraRedScanLines" Default="0.8" />
+                <!-- ^^^^^^^^^^^^^^^^^^^^ -->
+              
+                <!-- FullscreenEffects (2) -->
+                <Object Class="IntParameter"    Name="FullScreenEffectID_2" Variable="FullScreenEffectID_2" Default="0" />
+                    <Object Class="FloatParameter"  Name="DizzyIntensity" Variable="DizzyIntensity" Default="0" />
+                    <Object Class="FloatParameter"  Name="FlashIntensity" Variable="FlashIntensity" Default="0" />
+                    <Object Class="FloatParameter"  Name="BlurIntensity" Variable="BlurIntensity" Default="0" />
+                    <Object Class="FloatParameter"  Name="DesaturationIntensity" Variable="DesaturationIntensity" Default="0" />
+                    <Object Class="Float4Parameter" Name="StarsColor" Variable="StarsColor" Default="0,0,0,0" />
+                    <Object Class="Float4Parameter" Name="FrameColor" Variable="FrameColor" Default="0,0,0,0" />
+                    <Object Class="Float4Parameter" Name="CameraDirectionDelta" Variable="CameraDirectionDelta" Default="0,0,0,0" />
+                <!-- ^^^^^^^^^^^^^^^^^^^^ -->
+
+                <!-- Screen Frame -->
+                <Object Class="IntParameter"    Name="FrameOn" Variable="FrameOn" Default="0" />
+                <Object Class="TextureParameter" Name="TopFrame" Variable="TopFrame" />
+                <Object Class="TextureParameter" Name="LeftFrame" Variable="LeftFrame" />
+                <Object Class="TextureParameter" Name="CornerFrame" Variable="CornerFrame" />
+                <Object Class="Float4Parameter" Name="CameraShakeDir" Variable="CameraShakeDir" Default="0,0,0,0" />
+                <Object Class="FloatParameter"  Name="FrameFade" Variable="FrameFade" Default="6" />
+                <Object Class="FloatParameter"  Name="FrameWidth" Variable="FrameWidth" Default="0.6" />
+                <Object Class="FloatParameter"  Name="FrameRatio" Variable="FrameRatio" Default="1.0" />
+                <Object Class="Float4Parameter" Name="ScreenFrameColor" Variable="ScreenFrameColor" Default="0,0,0,1" />
+              
+                <!-- Fog -->
+                <Object Class="IntParameter"    Name="FogEnable" Variable="FogEnable" Default="1" />
+                <Object Class="IntParameter"    Name="FogShadows" Variable="FogShadowsEnable" Default="1" />
+              
+                <!-- Foreground compensation -->
+                <Object Class="FloatParameter"  Name="ForegroundWScale" Variable="ForegroundWScale" Default="1" />
+                <Object Class="FloatParameter"  Name="ForegroundZBias" Variable="ForegroundZBias" Default="0" />
+                <Object Class="FloatParameter"  Name="ForegroundZScale" Variable="ForegroundZScale" Default="1" />
+              
+                <!-- Screen Space Laser Dot -->
+                <Object Class="IntParameter"    Name="ScreenSpaceLaserDot" Variable="ScreenSpaceLaserDot" Default="0" />
+                <Object Class="FloatParameter"  Name="ScreenSpaceLaserDotIntensity" Variable="ScreenSpaceLaserDotIntensity" Default="10" />
+                <Object Class="Float4Parameter" Name="ScreenSpaceLaserDotOffset" Variable="ScreenSpaceLaserDotOffset" Default="0,0,0,0" />
+              
+                <!-- Other -->
+                <Object Class="IntParameter"    Name="HighQualityLighting" Variable="HighQualityLighting" Default="1" />
+                <Object Class="FloatParameter"  Name="MipBias" Variable="MipBias" Default="-0.5" />
+                <Object Class="IntParameter"    Name="MotionBlur" Variable="MotionBlurEnable" Default="1" />
+                <Object Class="FloatParameter"  Name="Obscure" Variable="PostObscure" Default="0" />
+                <Object Class="IntParameter"    Name="AllowNoise" Variable="AllowNoise" Default="1" />
+                <Object Class="IntParameter"    Name="AmbientOcclusion" Variable="AOEnable" Default="1" />
+                <Object Class="Float4Parameter" Name="Clear" Variable="PostClear" />
+                <Object Class="IntParameter"    Name="ColorGrading" Variable="EnableColorGrading" Default="1" />
+                <Object Class="IntParameter"    Name="SpecialEffect" Variable="SpecialEffect" Default="0" />
+                <Object Class="IntParameter"    Name="VisualizeLightCoverage" Variable="VisualizeLightCoverage" Default="0" />
+                <Object Class="IntParameter"    Name="WireFrame" Variable="WireFrame" />
+              
+            </Array>
+        </Object>
+        <Object Class="ParameterGroup" Name="Fog">
+            <Array Name="Parameters">
+                <Object Class="FloatParameter" Name="Density" Variable="FogDensity" Default="0.0" />
+                <Object Class="FloatParameter" Name="Floor" Variable="FogFloor" Default="0.0" />
+                <Object Class="FloatParameter" Name="Gradient" Variable="FogGradient" Default="0.0" />
+                <Object Class="FloatParameter" Name="Range" Variable="FogRange" />
+                <Object Class="FloatParameter" Name="Near" Variable="FogNear" />
+                <Object Class="FloatParameter" Name="Far" Variable="FogFar" Default="999999.0" />
+                <Object Class="FloatParameter" Name="SkyRange" Variable="FogSkyRange" />
+                <Object Class="FloatParameter" Name="SkyNear" Variable="FogSkyNear" />
+                <Object Class="FloatParameter" Name="SkyFar" Variable="FogSkyFar" />
+                <Object Class="Float3Parameter" Name="Color" Variable="FogColor" Default="0,0,0,1.0" />
+                <Object Class="IntParameter" Name="TurbulenceEnable" Variable="TurbulenceEnable" Default="0" />
+                <Object Class="FloatParameter" Name="TurbulenceScale" Variable="TurbulenceScale" Default="100" />
+                <Object Class="Float3Parameter" Name="TurbulenceDirection" Variable="TurbulenceDirection" Default="1,0,0,0" />
+                <Object Class="FloatParameter" Name="TurbulenceSpeed" Variable="TurbulenceSpeed" Default="1" />
+                <Object Class="FloatParameter" Name="TurbulenceBoilSpeed" Variable="TurbulenceBoilSpeed" Default="0.25" />
+                <Object Class="FloatParameter" Name="TurbulenceDensityRange" Variable="TurbulenceDensityRange" Default="0.75" />
+                <Object Class="IntParameter" Name="CloudsEnabled" Variable="CloudsEnabled" Default="0" />
+                <Object Class="TextureParameter" Name="CloudTextureFrom" Variable="CloudTextureFrom" />
+                <Object Class="TextureParameter" Name="CloudTextureTo" Variable="CloudTextureTo" />
+                <Object Class="FloatParameter" Name="CloudTextureLerp" Variable="CloudTextureLerp" Default="0" />
+                <Object Class="FloatParameter" Name="ClarityOfSky" Variable="ClarityOfSky" Default="1" />
+                <Object Class="FloatParameter" Name="CumulusCloudAnimationTiling" Variable="CumulusCloudAnimationTiling" Default="1" />
+                <Object Class="FloatParameter" Name="CumulusCloudAnimationSpeed" Variable="CumulusCloudAnimationSpeed" Default="1" />
+                <Object Class="FloatParameter" Name="CloudShadowAlphaPower" Variable="CloudShadowAlphaPower" Default="1" />
+                <Object Class="FloatParameter" Name="CumulusCloudTiling" Variable="CumulusCloudTiling" Default="1" />
+                <Object Class="FloatParameter" Name="StratusCloudTiling" Variable="StratusCloudTiling" Default="1" />
+                <Object Class="FloatParameter" Name="CumulusCloudScrollU" Variable="CumulusCloudScrollU" Default="0.0" />
+                <Object Class="FloatParameter" Name="CumulusCloudScrollV" Variable="CumulusCloudScrollV" Default="0.005" />
+                <Object Class="FloatParameter" Name="SunSize" Variable="SunSize" Default="0.05" />
+                <Object Class="FloatParameter" Name="SunBrightness" Variable="SunBrightness" Default="300.0" />
+                <Object Class="FloatParameter" Name="SunCloudCoverage" Variable="SunCloudCoverage" Default="1.0" />
+                <Object Class="FloatParameter" Name="CloudSilverLiningThickness" Variable="CloudSilverLiningThickness" Default="1.0" />
+                <Object Class="FloatParameter" Name="CloudSilverLiningBrightness" Variable="CloudSilverLiningBrightness" Default="1.0" />
+                <Object Class="FloatParameter" Name="CumulusCloudContrast" Variable="CumulusCloudContrast" Default="2.5" />
+                <Object Class="Float4Parameter" Name="CloudLayerWeightings" Variable="CloudLayerWeightings" Default="1,0,0,1" />
+                <Object Class="Float4Parameter" Name="CloudColor" Variable="CloudColor" Default="1,1,1,1" />
+                <Object Class="FloatParameter" Name="TimeStep" Variable="TimeStep" Default="0.0" />
+                <Object Class="FloatParameter" Name="BloomStrength" Variable="BloomStrength" Default="0.25" />
+                <Object Class="Float4Parameter" Name="Focus" Variable="PostFocus" />
+                <Object Class="Float3Parameter" Name="FlareColor" Variable="PostFlareColor" Default="0.0" />
+                <Object Class="IntParameter" Name="Vignette" Variable="PostVignette" />
+                <Object Class="FloatParameter" Name="AOSize" Variable="AOSize" Default="0.1" />
+                <Object Class="FloatParameter" Name="AOStrength" Variable="AOStrength" Default="1" />
+                <Object Class="FloatParameter" Name="AOSharpness" Variable="AOSharpness" Default="1" />
+                <Object Class="FloatParameter" Name="ShadowDomain" Variable="GradingShadowDomain" Default="0.5" />
+                <Object Class="FloatParameter" Name="HighlightDomain" Variable="GradingHighlightDomain" Default="0.5" />
+                <Object Class="FloatParameter" Name="ShadowSaturation" Variable="GradingShadowSaturation" Default="0" />
+                <Object Class="FloatParameter" Name="HighlightSaturation" Variable="GradingHighlightSaturation" Default="0" />
+                <Object Class="FloatParameter" Name="MidtoneSaturation" Variable="GradingMidtoneSaturation" Default="0" />
+                <Object Class="Float3Parameter" Name="ShadowTint" Variable="GradingShadowTint" />
+                <Object Class="Float3Parameter" Name="HighlightTint" Variable="GradingHighlightTint" />
+                <Object Class="FloatParameter" Name="Brightness" Variable="GradingBrightness" Default="0.333" />
+                <Object Class="FloatParameter" Name="Contrast" Variable="GradingContrast" Default="0.333" />
+                <Object Class="TextureParameter" Name="ColorKeyA" Variable="ColorKeyA" />
+                <Object Class="TextureParameter" Name="ColorKeyB" Variable="ColorKeyB" />
+                <Object Class="FloatParameter" Name="ColorKeyLerp" Variable="ColorKeyLerp" Default="0" />
+                <Object Class="FloatParameter" Name="WhitePoint" Variable="_WhitePoint" Default="1" />
+                <Object Class="FloatParameter" Name="SwayScale" Variable="SwayScale" Default="1" />
+                <Object Class="FloatParameter" Name="ScaleWavefrontSize" Variable="ScaleWavefrontSize" Default="1" />
+                <Object Class="FloatParameter" Name="SwaySpeed" Variable="SwaySpeed" Default="0" />
+                <Object Class="FloatParameter" Name="SwayBoilSpeed" Variable="SwayBoilSpeed" Default="0" />
+                <Object Class="FloatParameter" Name="SwayDir" Variable="SwayDir" Default="0" />
+                <Object Class="FloatParameter" Name="SwaySmoothing" Variable="SwaySmoothing" Default="0" />
+                <Object Class="FloatParameter" Name="SwayStrength" Variable="SwayStrength" Default="0" />
+                <!--Lens effects-->
+                <Object Class="FloatParameter" Name="RandomSeed" Variable="RandomSeed" Default="0" />
+                <Object Class="IntParameter"   Name="LensEffectsEnabled" Variable="LensEffectsEnabled" Default="0"/>
+                <Object Class="Float2Parameter" Name="LensHoodFalloffAngle" Variable="LensHoodFalloffAngle" />
+                <Object Class="Float2Parameter" Name="LensDirtLayerDensities" Variable="LensDirtLayerDensities" />
+                <Object Class="Float4Parameter" Name="LensDirtLayer1SizeStrRanges" Variable="LensDirtLayer1SizeStrRanges" />
+                <Object Class="Float4Parameter" Name="LensDirtLayer2SizeStrRanges" Variable="LensDirtLayer2SizeStrRanges" />
+                <Object Class="Float2Parameter" Name="LensDirtNoiseScaleStr" Variable="LensDirtNoiseScaleStr" />
+                <Object Class="Float4Parameter" Name="LensDirtBloomSunSkyStrAlpha" Variable="LensDirtBloomSunSkyStrAlpha" />
+                <Object Class="Float2Parameter" Name="LensDirtNoiseScaleStr" Variable="LensDirtNoiseScaleStr" />
+                <Object Class="Float2Parameter" Name="LensHazeSunSkyStr" Variable="LensHazeSunSkyStr" />
+                <Object Class="Float2Parameter" Name="LensCenterFalloffCutoff" Variable="LensCenterFalloffCutoff" />
+                
+            </Array>
+        </Object>
+        <Object Class="ParameterGroup" Name="PointLight">
+            <Array Name="Parameters">
+                <Object Class="Float3Parameter" Name="Position" Variable="PointLightPosition" />
+                <Object Class="FloatParameter" Name="Range" Variable="PointLightRange" Default="1.0" />
+                <Object Class="Float3Parameter" Name="Color" Variable="PointLightColor" Default="0.0" />
+                <Object Class="TextureParameter" Name="Texture" Variable="PointLightTexture" />
+            </Array>
+        </Object>
+        <Object Class="ParameterGroup" Name="SpotLight">
+            <Array Name="Parameters">
+                <Object Class="MatrixParameter" Name="Transform" Variable="SpotLightTransform" />
+                <Object Class="FloatParameter" Name="Range" Variable="SpotLightRange" Default="1.0" />
+                <Object Class="FloatParameter" Name="ConeInner" Variable="SpotLightConeInner" Default="0.6" />
+                <Object Class="FloatParameter" Name="ConeOuter" Variable="SpotLightConeOuter" Default="0.5" />
+                <Object Class="FloatParameter" Name="FalloffPower" Variable="SpotLightFalloffPower" Default="1.0" />
+                <Object Class="Float3Parameter" Name="Color" Variable="SpotLightColor" Default="0.0" />
+                <Object Class="TextureParameter" Name="SpotLightGelTexture" Variable="SpotLightGelTexture" />
+                <Object Class="MatrixParameter" Name="SpotLightShadowViewProj" Variable="SpotLightShadowViewProj" />
+                <Object Class="TextureParameter" Name="SpotLightShadowMap" Variable="SpotLightShadowMap" />
+                <Object Class="Float4Parameter" Name="SpotLightShadowMapCoeffs" Variable="SpotLightShadowMapCoeffs" />
+                <Object Class="IntParameter" Name="SpotShadowSampleMode" Variable="SpotShadowSampleMode" Default="0" />
+                <Object Class="IntParameter" Name="SpotGelEnable" Variable="SpotGelEnable" Default="0" />
+            </Array>
+        </Object>
+        <Object Class="ParameterGroup" Name="DirectionalLight">
+            <Array Name="Parameters">
+                <Object Class="Float3Parameter" Name="Direction" Variable="DirectionalLightDirection" Default="0.f,-0.7071f,-0.7071f,0" />
+                <Object Class="Float3Parameter" Name="ViewSpaceDirection" Variable="DirectionalLightViewSpaceDirection" Default="0.f,0.f,1.f,0" />
+                <Object Class="Float3Parameter" Name="Color" Variable="DirectionalLightColor" Default="1.f" />
+                <Object Class="MatrixParameter" Name="DirectionalShadowViewProj" Variable="DirectionalLightShadowViewProj" />
+                <Object Class="MatrixParameter" Name="DirectionalShadowInverseViewProj" Variable="DirectionalLightShadowInvViewProj" />
+                <Object Class="TextureParameter" Name="DirectionalShadowMap" Variable="DirectionalLightShadowMap" />
+                <Object Class="Float4Parameter" Name="ShadowMapCoeffs" Variable="DirShadowMapCoeffs" />
+            </Array>
+        </Object>
+        <Object Class="ParameterGroup" Name="SkyLight">
+            <Array Name="Parameters">
+                <Object Class="TextureParameter" Name="ProbeColorTexture0" Variable="SkyLightProbeColor0" />
+                <Object Class="TextureParameter" Name="ProbeNormalTexture0" Variable="SkyLightProbeNormal0" />
+                <Object Class="TextureParameter" Name="ProbeColorTexture1" Variable="SkyLightProbeColor1" />
+                <Object Class="TextureParameter" Name="ProbeNormalTexture1" Variable="SkyLightProbeNormal1" />
+                <Object Class="Float3Parameter" Name="ProbeLocation0" Variable="SkyLightProbeLocation0" />
+                <Object Class="Float3Parameter" Name="ProbeLocation1" Variable="SkyLightProbeLocation1" />
+                <Object Class="FloatParameter" Name="ProbeLerp" Variable="SkyLightProbeLerp" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff0" Variable="SkyLightCoeff0" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff1" Variable="SkyLightCoeff1" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff2" Variable="SkyLightCoeff2" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff3" Variable="SkyLightCoeff3" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff4" Variable="SkyLightCoeff4" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff5" Variable="SkyLightCoeff5" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff6" Variable="SkyLightCoeff6" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff7" Variable="SkyLightCoeff7" />
+                <Object Class="Float3Parameter" Name="AmbientCoeff8" Variable="SkyLightCoeff8" />
+            </Array>
+        </Object>
+        <Object Class="ParameterGroup" Name="Shadow">
+            <Array Name="Parameters">
+                <Object Class="TextureParameter" Name="ShadowFilterScratch" Variable="ShadowFilterSource" />
+                <Object Class="TextureParameter" Name="ShadowResolveOutput" Variable="NeverBindAutomatically" />
+                <Object Class="TextureParameter" Name="ParticlePCFShadowMap" Variable="ParticlePCFShadowMap" />
+                <Object Class="TextureParameter" Name="FinalTierShadowMap" Variable="FinalTierShadowMap" />
+                <Object Class="IntParameter" Name="ShadowSampleMode" Variable="ShadowSampleMode" Default="0" />
+        <Object Class="FloatParameter" Name="ShadowDepthBias" Variable="ShadowDepthBias" Default="0" />
+        <Object Class="FloatParameter" Name="ShadowSlopeScaledDepthBias" Variable="ShadowSlopeScaledDepthBias" Default="0" />
+        <Object Class="IntParameter" Name="SplatShadowDepth" Variable="SplatShadowDepth" Default="0" />
+        <Object Class="FloatParameter" Name="ShadowOpacity" Variable="ShadowOpacity" Default="0" />
+
+        <Object Class="Float4Parameter" Name="MainSceneCameraPos" Variable="MainSceneCameraPos"/>
+        <Object Class="TextureParameter" Name="ShadowMap" Variable="ShadowMap" />
+        <Object Class="Float4Parameter" Name="ShadowMapCoeffs" Variable="ShadowMapCoeffs"/>
+        <Object Class="FloatParameter" Name="ShadowOpacity" Variable="ShadowOpacity"/>
+      </Array>
+        </Object>
+        <Object Class="ParameterGroup" Name="UI">
+            <Array Name="Parameters">
+                <Object Class="IntParameter" Name="EnableSceneDepthAlphaCutout" Variable="EnableSceneDepthAlphaCutout" Default="0" />
+                <Object Class="FloatParameter" Name="SeparationStrength" Variable="SeparationStrength" Default="1" />
+            </Array>
+        </Object>
+    </Array>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <!-- /////////////////////////////////////////////////////////////  MATERIAL DEFINITIONS  /////////////////////////////////////////////////////////////////////////-->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  
+    <Array Name="MaterialDefinitions">
+
+        <!--NULL-->
+        <Object Class="MaterialDefinition" Name="NULL" Type="NULL" />
+      
+
+        <!--OcclusionModel-->
+        <Object Class="MaterialDefinition" Name="OcclusionModel" Type="NULL">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="BumpRigid.fxo" InputLayout="Position" />  <!--many things will beunhappy if there's no effect--> 
+            </Array>
+        </Object>
+        
+
+        <!--RigidLODs-->
+        <Object Class="MaterialDefinition" Name="RigidLODs" Type="LODView">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Visualizer"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="RigidLODs.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+
+        <!--TwoSidedRigidLODs-->
+        <Object Class="MaterialDefinition" Name="TwoSidedRigidLODs" Type="LODView">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Visualizer"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="TwoSidedRigidLODs.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+
+        <!--SkinnedLODs-->
+        <Object Class="MaterialDefinition" Name="SkinnedLODs" Type="LODView">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Visualizer"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="SkinnedLODs.fxo" InputLayout="DebugCharacter" />
+            </Array>
+        </Object>
+
+
+        <!--RigidSkinnedLODs-->
+        <Object Class="MaterialDefinition" Name="RigidSkinnedLODs" Type="LODView">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Visualizer"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="RigidSkinnedLODs.fxo" InputLayout="DebugVehicle" />
+            </Array>
+        </Object>
+
+
+        <!--RenderShadows-->
+        <Object Class="MaterialDefinition" Name="RenderShadows" Type="RenderShadows" />
+
+        <!--LPVPropagate-->
+        <Object Class="MaterialDefinition" Name="LPVPropagate" Type="LPVPropagate" />
+
+        <!--SkyDome-->
+        <Object Class="MaterialDefinition" Name="SkyDome" Type="Sky">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SkyDome.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--SkyHorizon-->
+        <Object Class="MaterialDefinition" Name="SkyHorizon" Type="Sky">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SkyHorizon.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--NewSatellite-->
+        <Object Class="MaterialDefinition" Name="NewSatellite" Type="NewSatellite">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Satellite.fxo" InputLayout="NewSatellite" />
+            </Array>
+        </Object>
+
+        <!--SunSatellite-->
+        <Object Class="MaterialDefinition" Name="SunSatellite" Type="SunSatellite">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Satellite.fxo" InputLayout="NewSatellite" />
+            </Array>
+        </Object>
+
+        <!--Cloud-->
+        <Object Class="MaterialDefinition" Name="Cloud" Type="Cloud">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Cloud.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--CloudBlend-->
+        <Object Class="MaterialDefinition" Name="CloudBlend" Type="CloudBlend">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CloudBlend.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--CloudShadows-->
+        <Object Class="MaterialDefinition" Name="CloudShadows" Type="CloudShadows">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastShadow" Effect="CloudShadows.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--ScreenSpaceLaserDot-->
+        <Object Class="MaterialDefinition" Name="ScreenSpaceLaserDot" Type="ScreenSpaceLaserDot">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="ScreenSpaceLaserDot.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--ParticlePCFShadows-->
+        <Object Class="MaterialDefinition" Name="ParticlePCFShadows" Type="ParticlePCFShadows">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastShadow" Effect="ParticlePCFShadows.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--FullscreenEffectsPass1-->
+        <Object Class="MaterialDefinition" Name="FullscreenEffectsPass1" Type="FullscreenEffectsPass1">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="FullscreenEffectsPass1.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--FullscreenEffectsPass2-->
+        <Object Class="MaterialDefinition" Name="FullscreenEffectsPass2" Type="FullscreenEffectsPass2">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="FullscreenEffectsPass2.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--ScreenFrameUI-->
+        <Object Class="MaterialDefinition" Name="ScreenFrameUI" Type="ScreenFrameUI">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="ScreenFrameUI.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--SkyBox-->
+        <Object Class="MaterialDefinition" Name="SkyBox" Type="SkyBox">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SkyCube.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--SkyMesh-->
+        <Object Class="MaterialDefinition" Name="SkyMesh" Type="SkyMesh">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SkyMesh.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--SkyMeshBlend-->
+        <Object Class="MaterialDefinition" Name="SkyMeshBlend" Type="SkyMeshBlend">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SkyMeshBlend.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--Terrain1Layer-->
+        <Object Class="MaterialDefinition" Name="Terrain1Layer" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain1Layer.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrain_depth.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="Terrain" />
+            </Array>
+        </Object>
+
+        <!--Terrain2Layer-->
+        <Object Class="MaterialDefinition" Name="Terrain2Layer" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain2Layer.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrain_depth.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="Terrain" />
+            </Array>
+        </Object>
+
+        <!--Terrain3Layer-->
+        <Object Class="MaterialDefinition" Name="Terrain3Layer" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain3Layer.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrain_depth.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="Terrain" />
+            </Array>
+        </Object>
+
+        <!--Terrain4Layer-->
+        <Object Class="MaterialDefinition" Name="Terrain4Layer" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain4Layer.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrain_depth.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="Terrain" />
+            </Array>
+        </Object>
+
+        <!--Terrain5Layer-->
+        <Object Class="MaterialDefinition" Name="Terrain5Layer" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain5Layer.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrain_depth.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="Terrain" />
+            </Array>
+        </Object>
+
+        <!--Terrain1LayerLod-->
+        <Object Class="MaterialDefinition" Name="Terrain1LayerLod" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain1LayerLod.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrainlod_depth.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="TerrainLod0" />
+            </Array>
+        </Object>
+
+        <!--Terrain2LayerLod-->
+        <Object Class="MaterialDefinition" Name="Terrain2LayerLod" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain2LayerLod.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrainlod_depth.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="TerrainLod0" />
+            </Array>
+        </Object>
+
+        <!--Terrain3LayerLod-->
+        <Object Class="MaterialDefinition" Name="Terrain3LayerLod" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain3LayerLod.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrainlod_depth.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="TerrainLod0" />
+            </Array>
+        </Object>
+
+        <!--Terrain4LayerLod-->
+        <Object Class="MaterialDefinition" Name="Terrain4LayerLod" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain4LayerLod.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrainlod_depth.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="TerrainLod0" />
+            </Array>
+        </Object>
+
+        <!--Terrain5LayerLod-->
+        <Object Class="MaterialDefinition" Name="Terrain5LayerLod" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Terrain5LayerLod.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrainlod_depth.fxo" InputLayout="TerrainLod0" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="TerrainLod0" />
+            </Array>
+        </Object>
+
+        <!--TerrainLodTile-->
+        <Object Class="MaterialDefinition" Name="TerrainLodTile" Type="DeferredTerrain">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="TerrainLodTile.fxo" InputLayout="TerrainLod" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrainlod_depth.fxo" InputLayout="TerrainLod" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="TerrainLod" />
+            </Array>
+        </Object>
+
+        <!--TerrainAudit-->
+        <Object Class="MaterialDefinition" Name="TerrainAudit" Type="ForwardAlpha">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="terrain_Audit.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="terrain_depth.fxo" InputLayout="Terrain" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="terrain_rsm.fxo" InputLayout="Terrain" />
+            </Array>
+        </Object>
+
+        <!--FloraModel-->
+        <Object Class="MaterialDefinition" Name="FloraModel" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="floraModel.fxo" InputLayout="FloraModel" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="FloraModel" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="floraModel_rsm.fxo" InputLayout="FloraModel" />
+            </Array>
+        </Object>
+
+        <!--FloraModelInstanced-->
+        <Object Class="MaterialDefinition" Name="FloraModelInstanced" Type="DeferredOpaque">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="floraModelInstanced.fxo" InputLayout="FloraModelInstanced" />
+            </Array>
+        </Object>
+
+        <!--ModelInstanced-->
+        <Object Class="MaterialDefinition" Name="ModelInstanced" Type="DeferredOpaque">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="modelInstanced.fxo" InputLayout="BumpUVInstanced" />
+            </Array>
+        </Object>
+        
+
+        <!--BumpRigid-->
+        <Object Class="MaterialDefinition" Name="BumpRigid" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="BumpRigidDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Stealth" Value="CharacterStealth"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="CharacterShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="BumpRigidInstanced" />
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="bumpRigid.fxo" InputLayout="BumpRigid" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="BumpRigid" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="bumpRigid_rsm.fxo" InputLayout="BumpRigid" />
+            </Array>
+        </Object>
+
+
+        <!--BumpRigidInstanced-->
+        <Object Class="MaterialDefinition" Name="BumpRigidInstanced" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="BumpRigidDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Stealth" Value="CharacterStealth"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="CharacterShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="bumpRigidInstanced.fxo" InputLayout="BumpRigidInstanced" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigidInstanced_depth.fxo" InputLayout="BumpRigidInstanced" />
+            </Array>
+        </Object>
+
+
+        <!--BumpRigidHologram-->
+        <Object Class="MaterialDefinition" Name="BumpRigidHologram" Type="Hologram">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpRigidHologram.fxo" InputLayout="BumpRigid" />
+            </Array>
+        </Object>
+
+
+        <!--BumpRigidHologram2Sided-->
+        <Object Class="MaterialDefinition" Name="BumpRigidHologram2Sided" Type="Hologram2Sided">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpRigidHologram.fxo" InputLayout="BumpRigid" />
+            </Array>
+        </Object>
+
+
+        <!--BumpRigidHologram2S-->
+        <Object Class="MaterialDefinition" Name="BumpRigidHologram2S" Type="Hologram2SidedBlend">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpRigidHologram.fxo" InputLayout="BumpRigid" />
+            </Array>
+        </Object>
+
+
+        <!--BumpRigidHologram2SidedBlend-->
+        <Object Class="MaterialDefinition" Name="BumpRigidHologram2SidedBlend" Type="Hologram2SidedBlend">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="BumpRigidHologram2SidedBlendInstanced" />
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpRigidHologram.fxo" InputLayout="BumpRigid" />
+            </Array>
+        </Object>
+        
+
+        <!--BumpRigidHologram2SidedBlendInstanced-->
+        <Object Class="MaterialDefinition" Name="BumpRigidHologram2SidedBlendInstanced" Type="Hologram2SidedBlend">
+            <Array Name="Properties">
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpRigidHologramInstanced.fxo" InputLayout="BumpRigidInstanced" />
+            </Array>
+        </Object>
+
+
+
+        <!--BumpRigidDeRes-->
+        <Object Class="MaterialDefinition" Name="BumpRigidDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="BumpRigidDeRes.fxo" InputLayout="BumpRigid" />
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpRigidDeResGlow.fxo" InputLayout="BumpRigid" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="RigidDeResDepth.fxo" InputLayout="BumpRigid" />
+            </Array>
+        </Object>
+
+        <!--BumpSkin-->
+        <Object Class="MaterialDefinition" Name="BumpSkin" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>Skinned</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="BumpSkinDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Stealth" Value="BumpSkinStealth"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="BumpSkinShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="SkinnedLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="BumpSkin.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="skin_depth.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="skin_rsm.fxo" InputLayout="BumpUVSkin" />
+            </Array>
+        </Object>
+
+        <!--Tracer-->
+        <Object Class="MaterialDefinition" Name="Tracer" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="bumpRigid.fxo" InputLayout="BumpRigid" />
+            </Array>
+        </Object>
+
+        <!--Primitive3D-->
+        <Object Class="MaterialDefinition" Name="Primitive3D" Type="Primitive3D">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Primitive3D.fxo" InputLayout="Color" />
+            </Array>
+        </Object>
+
+        <!--Primitive3DNoZ-->
+        <Object Class="MaterialDefinition" Name="Primitive3DNoZ" Type="Primitive3DNoZ">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Primitive3DNoZ.fxo" InputLayout="Color" />
+            </Array>
+        </Object>
+
+        <!--PrimitivePseudo3DTexture-->
+        <Object Class="MaterialDefinition" Name="PrimitivePseudo3DTexture" Type="Primitive3D">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="primitiveBillboard.fxo" InputLayout="Billboard" />
+            </Array>
+        </Object>
+
+        <!--DownsampleDepth-->
+        <Object Class="MaterialDefinition" Name="DownsampleDepth" Type="DownsampleDepth">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="downsampleDepth.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--CylindricalWarp-->
+        <Object Class="MaterialDefinition" Name="CylindricalWarp" Type="CylindricalWarp">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CylindricalWarp.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--CompositeEnv-->
+        <Object Class="MaterialDefinition" Name="CompositeEnv" Type="CompositeEnv">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CompositeEnv.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--EnvFilter-->
+        <Object Class="MaterialDefinition" Name="EnvFilter" Type="EnvFilter">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="EnvFilter.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--SmartBlur-->
+        <Object Class="MaterialDefinition" Name="SmartBlur" Type="SmartBlur">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="smartBlur.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--Blur-->
+        <Object Class="MaterialDefinition" Name="Blur" Type="Blur">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="blur.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--FogBlur-->
+        <Object Class="MaterialDefinition" Name="FogBlur" Type="FogBlur">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="fogblur.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--SevenTapGaussian-->
+        <Object Class="MaterialDefinition" Name="SevenTapGaussian" Type="SevenTapGaussian">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SevenTapGaussian.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--BloomBlur-->
+        <Object Class="MaterialDefinition" Name="BloomBlur" Type="BloomBlur">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="bloomblur.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--RainbowRadial-->
+        <Object Class="MaterialDefinition" Name="RainbowRadial" Type="RainbowRadial">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="RainbowRadial.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--EdgeAA-->
+        <Object Class="MaterialDefinition" Name="EdgeAA" Type="EdgeAA">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="dirblur.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--Bloom-->
+        <Object Class="MaterialDefinition" Name="Bloom" Type="Bloom">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="bloom.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--Threshold-->
+        <Object Class="MaterialDefinition" Name="Threshold" Type="Threshold">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="threshold.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--DepthToAlpha-->
+        <Object Class="MaterialDefinition" Name="DepthToAlpha" Type="DepthToAlpha">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="DepthToAlpha.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--Primitive2D-->
+        <Object Class="MaterialDefinition" Name="Primitive2D" Type="Primitive2D">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Primitive2D.fxo" InputLayout="Color" />
+            </Array>
+        </Object>
+
+        <!--Primitive2DTexture-->
+        <Object Class="MaterialDefinition" Name="Primitive2DTexture" Type="Primitive2D">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Primitive2DTexture.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--Primitive2DLinearRGB-->
+        <Object Class="MaterialDefinition" Name="Primitive2DLinearRGB" Type="Primitive2DLinear">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Primitive2DTexture3.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--DebugText-->
+        <Object Class="MaterialDefinition" Name="DebugText" Type="Primitive2D">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="DebugText.fxo" InputLayout="DebugText" />
+            </Array>
+        </Object>
+
+        <!--ProjDecal-->
+        <Object Class="MaterialDefinition" Name="ProjDecal" Type="Decal">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Color" Effect="ProjDecal.fxo" InputLayout="ProjDecal" />
+                <Object Class="DrawStyle" Name="Clear" Effect="ProjDecalClear.fxo" InputLayout="ProjDecal" />
+                <Object Class="DrawStyle" Name="Lighting" Effect="ProjDecalLighting.fxo" InputLayout="ProjDecal" />
+            </Array>
+        </Object>
+
+        <!--DistortionFixup-->
+        <Object Class="MaterialDefinition" Name="DistortionFixup" Type="DistortionFixup">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="distortionFixup.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--ApplyDistortion-->
+        <Object Class="MaterialDefinition" Name="ApplyDistortion" Type="ApplyDistortion">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="distortion.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--ResolveTransparency-->
+        <Object Class="MaterialDefinition" Name="ResolveTransparency" Type="ResolveTransparency">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="resolveTransparency.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--LPVInjection_RSM_Color-->
+        <Object Class="MaterialDefinition" Name="LPVInjection_RSM_Color" Type="LPVInjection_RSM_Color">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastRSM" Effect="LPVInjection_RSM_Color.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--LPVInjection_RSM_Geo-->
+        <Object Class="MaterialDefinition" Name="LPVInjection_RSM_Geo" Type="LPVInjection_RSM_Geo">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastRSM" Effect="LPVInjection_RSM_Geo.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--LPVInjection_Main_Geo-->
+        <Object Class="MaterialDefinition" Name="LPVInjection_Main_Geo" Type="LPVInjection_Main_Geo">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastRSM" Effect="LPVInjection_Main_Geo.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--LPVInjection_Debug-->
+        <Object Class="MaterialDefinition" Name="LPVInjection_Debug" Type="LPVInjection_Debug">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="LPVInjection_Debug.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--ShadowProjector-->
+        <Object Class="MaterialDefinition" Name="ShadowProjector" Type="ProjectShadows">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastShadow" Effect="ShadowProjector.fxo" InputLayout="Position" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="ShadowProjector.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--PointLight-->
+        <Object Class="MaterialDefinition" Name="PointLight" Type="LocalLight">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="pointLight.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--SpotLight-->
+        <Object Class="MaterialDefinition" Name="SpotLight" Type="LocalLight">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="spotLight.fxo" InputLayout="Position" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="spotLight.fxo" InputLayout="Position" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="spotLight.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--GlobalLight-->
+        <Object Class="MaterialDefinition" Name="GlobalLight" Type="GlobalLight">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="globalLight.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--GlobalLightLowEnd-->
+        <Object Class="MaterialDefinition" Name="GlobalLightLowEnd" Type="GlobalLightLowEnd">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="GlobalLightLowEnd.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--CompositeSky-->
+        <Object Class="MaterialDefinition" Name="CompositeSky" Type="CompositeSky">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CompositeSky.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--Fog-->
+        <Object Class="MaterialDefinition" Name="Fog" Type="Fog">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="fog.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--FogLowEnd-->
+        <Object Class="MaterialDefinition" Name="FogLowEnd" Type="FogLowEnd">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="fogLowEnd.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--AmbientOcclusion-->
+        <Object Class="MaterialDefinition" Name="AmbientOcclusion" Type="AmbientOcclusion">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="ambientOcclusion.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--AmbientOcclusionUpsample-->
+        <Object Class="MaterialDefinition" Name="AmbientOcclusionUpsample" Type="Blur">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="ambientOcclusionUpsample.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--RedDotSight-->
+        <Object Class="MaterialDefinition" Name="RedDotSight" Type="RedDotSight">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="RedDotEmissive.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--MotionFixup-->
+        <Object Class="MaterialDefinition" Name="MotionFixup" Type="MotionFixup">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="motionfixup.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--MotionBlur-->
+        <Object Class="MaterialDefinition" Name="MotionBlur" Type="MotionBlur">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="motionblur.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--PostProcess-->
+        <Object Class="MaterialDefinition" Name="PostProcess" Type="PostProcess">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="post.fxo" InputLayout="Position" />
+                <Object Class="DrawStyle" Name="Resolve" Effect="tonemap.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--PostProcessLowEnd-->
+        <Object Class="MaterialDefinition" Name="PostProcessLowEnd" Type="PostProcessLowEnd">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="PostLowEnd.fxo" InputLayout="Position" />
+                <Object Class="DrawStyle" Name="Resolve" Effect="ToneMapLowEnd.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--Flare-->
+        <Object Class="MaterialDefinition" Name="Flare" Type="Flare">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="flare.fxo" InputLayout="Position" />
+            </Array>
+        </Object>
+
+        <!--FontPrimitive-->
+        <Object Class="MaterialDefinition" Name="FontPrimitive" Type="Primitive3D">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="fontPrimitive.fxo" InputLayout="FontPrimitive" />
+            </Array>
+        </Object>
+      
+        <!--APEX-->
+
+        <!--ApexSpriteParticle-->
+        <Object Class="MaterialDefinition" Name="ApexSpriteParticle" Type="Particle">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="ApexSpriteParticle.fxo" InputLayout="ApexSpriteParticle" />
+            </Array>
+        </Object>
+
+        <!--ApexStreakParticle-->
+        <Object Class="MaterialDefinition" Name="ApexStreakParticle" Type="FullResParticle">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="ApexStreakParticle.fxo" InputLayout="ApexStreakParticle" />
+            </Array>
+        </Object>
+        <!--END-->
+      
+
+        <!--SpriteParticle-->
+        <Object Class="MaterialDefinition" Name="SpriteParticle" Type="Particle">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="spriteParticle.fxo" InputLayout="SpriteParticle" />
+            </Array>
+        </Object>
+
+        <!--DistortParticle-->
+        <Object Class="MaterialDefinition" Name="DistortParticle" Type="Distortion">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="ParticleDistort.fxo" InputLayout="SpriteParticle" />
+            </Array>
+        </Object>
+
+        <!--BeamParticle-->
+        <Object Class="MaterialDefinition" Name="BeamParticle" Type="Particle">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="beamParticle.fxo" InputLayout="BeamParticle" />
+            </Array>
+        </Object>
+
+        <!--FullResBeamParticle-->
+        <Object Class="MaterialDefinition" Name="FullResBeamParticle" Type="FullResParticle">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="beamParticle.fxo" InputLayout="BeamParticle" />
+            </Array>
+        </Object>
+
+        <!--StreakParticle-->
+        <Object Class="MaterialDefinition" Name="StreakParticle" Type="FullResParticle">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="streakParticle.fxo" InputLayout="StreakParticle" />
+            </Array>
+        </Object>
+
+        <!--SimpleEmissive-->
+        <Object Class="MaterialDefinition" Name="SimpleEmissive" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="simpleemissive.fxo" InputLayout="SimpleEmissive" />
+            </Array>
+        </Object>
+
+        <!--Tracer-->
+        <Object Class="MaterialDefinition" Name="Tracer" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="simpleemissive.fxo" InputLayout="SimpleEmissive" />
+            </Array>
+        </Object>
+
+        <!--ShadowFilter-->
+        <Object Class="MaterialDefinition" Name="ShadowFilter" Type="ShadowFilter">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastShadow" Effect="ShadowFilter.fxo" InputLayout="Post" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="ShadowFilter.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--ShadowResolve-->
+        <Object Class="MaterialDefinition" Name="ShadowResolve" Type="ShadowResolve">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="CastShadow" Effect="ShadowResolve.fxo" InputLayout="Post" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="ShadowResolve.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--Primitive2DTexture2-->
+        <Object Class="MaterialDefinition" Name="Primitive2DTexture2" Type="Primitive2D">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Primitive2DTexture2.fxo" InputLayout="ColorUV" />
+            </Array>
+        </Object>
+
+        <!--Water-->
+        <Object Class="MaterialDefinition" Name="Water" Type="Water">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="water.fxo" InputLayout="ClrNrmUV" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="ClrNrmUV" />
+                <Object Class="DrawStyle" Name="MiniMap" Effect="waterMinimap.fxo" InputLayout="ClrNrmUV" />
+            </Array>
+        </Object>
+
+        <!--Flora-->
+        <Object Class="MaterialDefinition" Name="Flora" Type="DeferredOpaque">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="flora.fxo" InputLayout="Flora" />
+            </Array>
+        </Object>
+
+        <!--SkyMask-->
+        <Object Class="MaterialDefinition" Name="SkyMask" Type="SkyMask">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SkyMask.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--CompositeParticles-->
+        <Object Class="MaterialDefinition" Name="CompositeParticles" Type="Compositor">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CompositeParticles.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--ConvertDepth-->
+        <Object Class="MaterialDefinition" Name="ConvertDepth" Type="Compositor">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="ConvertDepth.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+
+        <!--Designer-->
+        <Object Class="MaterialDefinition" Name="Designer" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="DesignerInstanced" />
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Designer.fxo" InputLayout="Designer" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Designer" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="bumpRigid_rsm.fxo" InputLayout="Designer" />
+            </Array>
+        </Object>
+
+        <!--DesignerInstanced-->
+        <Object Class="MaterialDefinition" Name="DesignerInstanced" Type="DeferredOpaque">
+            <Array Name="Properties">
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="DesignerInstanced.fxo" InputLayout="DesignerInstanced" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigidInstanced_depth.fxo" InputLayout="DesignerInstanced" />
+            </Array>
+        </Object>
+
+        <!--Foliage-->
+        <Object Class="MaterialDefinition" Name="Foliage" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="FoliageInstanced" />
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Foliage.fxo" InputLayout="Foliage" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="TwoSidedSway_Depth.fxo" InputLayout="Foliage" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="TwoSided_rsm.fxo" InputLayout="Foliage" />
+            </Array>
+        </Object>
+
+        <!--FoliageInstanced-->
+        <Object Class="MaterialDefinition" Name="FoliageInstanced" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>SemiTransparent</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="FoliageInstanced.fxo" InputLayout="FoliageInstanced" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="TwoSidedSwayInstanced_Depth.fxo" InputLayout="FoliageInstanced" />
+            </Array>
+        </Object>
+
+        <!--Trunk-->
+        <Object Class="MaterialDefinition" Name="Trunk" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="TrunkInstanced" />
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="trunk.fxo" InputLayout="Trunk" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="sway_depth.fxo" InputLayout="Trunk" />
+                <!--<Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="Trunk" /> todo <klang may12>-->
+            </Array>
+        </Object>
+
+        <!--TrunkInstanced-->
+        <Object Class="MaterialDefinition" Name="TrunkInstanced" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="trunkInstanced.fxo" InputLayout="TrunkInstanced" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="swayInstanced_depth.fxo" InputLayout="TrunkInstanced" />
+            </Array>
+        </Object>
+
+        <!--TwoSided-->
+        <Object Class="MaterialDefinition" Name="TwoSided" Type="TwoSided">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="TwoSidedRigidLODs"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="TwoSidedInstanced" />
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="TwoSided.fxo" InputLayout="TwoSided" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="TwoSided_Depth.fxo" InputLayout="TwoSided" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="TwoSided_rsm.fxo" InputLayout="TwoSided" />
+            </Array>
+        </Object>
+
+        <!--TwoSidedInstanced-->
+        <Object Class="MaterialDefinition" Name="TwoSidedInstanced" Type="TwoSided">
+            <Array Name="Properties">
+                <String>SemiTransparent</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="TwoSidedRigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="TwoSidedInstanced.fxo" InputLayout="TwoSidedInstanced" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="TwoSidedInstanced_Depth.fxo" InputLayout="TwoSidedInstanced" />
+            </Array>
+        </Object>
+
+        <!--Structure-->
+        <Object Class="MaterialDefinition" Name="Structure" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="StructureInstanced" />
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="structure.fxo" InputLayout="Structure" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Structure" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="Structure" />
+            </Array>
+        </Object>
+
+        <!--Lava-->
+        <Object Class="MaterialDefinition" Name="Lava" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Lava.fxo" InputLayout="Structure" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Structure" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="Structure" />
+            </Array>
+        </Object>
+
+        <!--Glow-->
+        <Object Class="MaterialDefinition" Name="Glow" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Glow.fxo" InputLayout="Glow" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Glow" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="Glow" />
+            </Array>
+        </Object>
+
+        <!--StructureInstanced-->
+        <Object Class="MaterialDefinition" Name="StructureInstanced" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="structureInstanced.fxo" InputLayout="StructureInstanced" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigidInstanced_depth.fxo" InputLayout="StructureInstanced" />
+            </Array>
+        </Object>
+
+
+        <!--StructureSnow-->
+    <Object Class="MaterialDefinition" Name="StructureSnow" Type="DeferredOpaque">
+      <Array Name="Properties">
+        <String>ArtistSelectable</String>
+        <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+        <!--<Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="StructureSnowInstanced" />-->
+      </Array>
+      <Array Name="DrawStyles">
+        <Object Class="DrawStyle" Name="Normal" Effect="structuresnow.fxo" InputLayout="Structure" />
+        <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Structure" />
+        <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="Structure" /><!--NYI <klang July12>-->
+      </Array>
+    </Object>
+
+        <!--StructureSnowInstanced-->
+    <Object Class="MaterialDefinition" Name="StructureSnowInstanced" Type="DeferredOpaque">
+      <Array Name="Properties">
+        <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+      </Array>
+      <Array Name="DrawStyles">
+        <Object Class="DrawStyle" Name="Normal" Effect="structureSnowInstanced.fxo" InputLayout="StructureInstanced" />
+        <Object Class="DrawStyle" Name="CastShadow" Effect="rigidInstanced_depth.fxo" InputLayout="StructureInstanced" />
+      </Array>
+    </Object>
+
+
+        <!--StructureBlend-->
+    <Object Class="MaterialDefinition" Name="StructureBlend" Type="DeferredOpaque">
+      <Array Name="Properties">
+        <String>ArtistSelectable</String>
+        <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+        <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="StructureBlendInstanced" />
+      </Array>
+      <Array Name="DrawStyles">
+        <Object Class="DrawStyle" Name="Normal" Effect="structureblend.fxo" InputLayout="Structure" />
+        <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Structure" />
+        <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="Structure" />
+      </Array>
+    </Object>
+
+        <!--StructureBlendInstanced-->
+  <Object Class="MaterialDefinition" Name="StructureBlendInstanced" Type="DeferredOpaque">
+      <Array Name="Properties">
+        <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+      </Array>
+      <Array Name="DrawStyles">
+        <Object Class="DrawStyle" Name="Normal" Effect="StructureBlendInstanced.fxo" InputLayout="StructureInstanced" />
+        <Object Class="DrawStyle" Name="CastShadow" Effect="rigidInstanced_depth.fxo" InputLayout="StructureInstanced" />
+      </Array>
+    </Object>
+
+
+        <!--StructureSkinned-->
+    <Object Class="MaterialDefinition" Name="StructureSkinned" Type="DeferredOpaque">
+      <Array Name="Properties">
+        <String>ArtistSelectable</String>
+        <String>RigidSkinned</String>        
+      </Array>
+      <Array Name="DrawStyles">
+        <Object Class="DrawStyle" Name="Normal" Effect="structureskinned.fxo" InputLayout="Structure" />
+        <Object Class="DrawStyle" Name="CastShadow" Effect="vehicle_depth.fxo" InputLayout="Structure" />
+        <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="Structure" /><!--NYI <klang july12>-->
+      </Array>
+    </Object>
+    
+
+        <!--StructureDecal-->
+        <Object Class="MaterialDefinition" Name="StructureDecal" Type="StaticDecal">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="structureDecal.fxo" InputLayout="StructureDecal" />
+            </Array>
+        </Object>
+
+        <!--StructureTint-->
+        <Object Class="MaterialDefinition" Name="StructureTint" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="structuretint.fxo" InputLayout="StructureTint" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="StructureTint" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="StructureTint" />
+            </Array>
+        </Object>
+
+        <!--StructureWsOverlay-->
+        <Object Class="MaterialDefinition" Name="StructureWsOverlay" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="structurewsoverlay.fxo" InputLayout="StructureWsOverlay" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="StructureWsOverlay" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="structure_rsm.fxo" InputLayout="StructureWsOverlay" />
+            </Array>
+        </Object>
+
+        <!--Object-->
+        <Object Class="MaterialDefinition" Name="Object" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="InstancedVersion" Value="ObjectInstanced" />
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="object.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="bumpRigid_rsm.fxo" InputLayout="Object" />
+            </Array>
+        </Object>
+
+        <!--ObjectInstanced-->
+        <Object Class="MaterialDefinition" Name="ObjectInstanced" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="objectInstanced.fxo" InputLayout="ObjectInstanced" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigidInstanced_depth.fxo" InputLayout="ObjectInstanced" />
+            </Array>
+        </Object>
+
+        <!--Vehicle-->
+        <Object Class="MaterialDefinition" Name="Vehicle" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>RigidSkinned</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="VehicleDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="VehicleShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidSkinnedLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="vehicle.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="vehicle_depth.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="vehicle_rsm.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+
+
+        <!--VehicleHologram-->
+        <Object Class="MaterialDefinition" Name="VehicleHologram" Type="Hologram">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="VehicleHologram.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--VehicleDeRes-->
+        <Object Class="MaterialDefinition" Name="VehicleDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>RigidSkinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="VehicleDeRes.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="Glow" Effect="VehicleDeResGlow.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="VehicleDeResDepth.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--VehicleShield-->
+        <Object Class="MaterialDefinition" Name="VehicleShield" Type="Shield">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>ArtistModelMaterialSelectable</String>
+                <String>RigidSkinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Shield"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="VehicleShield_AddDistortion.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="Glow" Effect="VehicleShield_DistortionColor.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--VehicleRigid-->
+        <Object Class="MaterialDefinition" Name="VehicleRigid" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="VehicleRigidDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="VehicleRigidShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidSkinnedLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="vehiclerigid.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="vehiclerigid_rsm.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--VehicleRigidDeRes-->
+        <Object Class="MaterialDefinition" Name="VehicleRigidDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="VehicleRigidDeRes.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="Glow" Effect="VehicleRigidDeResGlow.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="RigidDeResDepth.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--VehicleRigidShield-->
+        <Object Class="MaterialDefinition" Name="VehicleRigidShield" Type="Shield">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Shield"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="VehicleRigidShield_AddDistortion.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="Glow" Effect="VehicleRigidShield_DistortionColor.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--Character-->
+        <Object Class="MaterialDefinition" Name="Character" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>Skinned</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="CharacterDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Stealth" Value="CharacterStealth"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="CharacterShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="SkinnedLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Character.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="skin_depth.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="skin_rsm.fxo" InputLayout="Character" />
+            </Array>
+        </Object>
+
+
+        <!--CharacterRigid-->
+        <Object Class="MaterialDefinition" Name="CharacterRigid" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="CharacterRigidDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Stealth" Value="CharacterRigidStealth"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="CharacterRigidShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CharacterRigid.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="CharacterRigid" />
+            </Array>
+        </Object>
+
+
+        <!--CharacterHologram-->
+        <Object Class="MaterialDefinition" Name="CharacterHologram" Type="Hologram">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>Skinned</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterHologram.fxo" InputLayout="Character" />
+            </Array>
+        </Object>
+
+
+        <!--CharacterDeRes-->
+        <Object Class="MaterialDefinition" Name="CharacterDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CharacterDeRes.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterDeResGlow.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="CharacterDeResDepth.fxo" InputLayout="Character" />
+            </Array>
+        </Object>
+
+
+        <!--BumpSkinDeRes-->
+        <Object Class="MaterialDefinition" Name="BumpSkinDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="BumpSkinDeRes.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpSkinDeRes_Glow.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="BumpSkinDeRes_Depth.fxo" InputLayout="BumpUVSkin" />
+            </Array>
+        </Object>
+      
+
+        <!--CharacterRigidDeRes-->
+        <Object Class="MaterialDefinition" Name="CharacterRigidDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="CharacterRigidDeRes.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterRigidDeResGlow.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="RigidDeResDepth.fxo" InputLayout="CharacterRigid" />
+            </Array>
+        </Object>
+
+        <!--TankTread-->
+        <Object Class="MaterialDefinition" Name="TankTread" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="TankTreadDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="SkinnedLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="TankTread.fxo" InputLayout="TankTread" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="skin_depth.fxo" InputLayout="TankTread" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="skin_rsm.fxo" InputLayout="TankTread" />
+            </Array>
+        </Object>
+        
+
+        <!--TankTreadDeRes-->
+        <Object Class="MaterialDefinition" Name="TankTreadDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="TankTreadDeRes.fxo" InputLayout="TankTread" />
+                <Object Class="DrawStyle" Name="Glow" Effect="TankTreadDeResGlow.fxo" InputLayout="TankTread" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="CharacterDeResDepth.fxo" InputLayout="TankTread" />
+            </Array>
+        </Object>
+        
+
+        <!--Skin-->
+        <Object Class="MaterialDefinition" Name="Skin" Type="DeferredOpaque">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>Skinned</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="SkinDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Stealth" Value="CharacterStealth"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Shield" Value="CharacterShield"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="SkinnedLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="Skin.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="skin_depth.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="skin_rsm.fxo" InputLayout="Character" />
+            </Array>
+        </Object>
+        
+
+        <!--SkinDeRes-->
+        <Object Class="MaterialDefinition" Name="SkinDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="SkinDeRes.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterDeResGlow.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="CharacterDeResDepth.fxo" InputLayout="Character" />
+            </Array>
+        </Object>
+        
+
+        <!--VehicleGlass-->
+        <Object Class="MaterialDefinition" Name="VehicleGlass" Type="DeferredTransparent">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+                <String>RigidSkinned</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="DeRes" Value="VehicleGlassDeRes"/>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidSkinnedLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="vehicleglass.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="vehicle_depth.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="vehicle_rsm.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--VehicleGlassDeRes-->
+        <Object Class="MaterialDefinition" Name="VehicleGlassDeRes" Type="DeRes">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>SemiTransparent</String>
+                <String>RigidSkinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="DeRes"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="VehicleGlassDeRes.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="Glow" Effect="VehicleGlassDeResGlow.fxo" InputLayout="Vehicle" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="VehicleDeResDepth.fxo" InputLayout="Vehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--ObjectGlass-->
+        <Object Class="MaterialDefinition" Name="ObjectGlass" Type="DeferredTransparent">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="objectglass.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="objectglass_rsm.fxo" InputLayout="Object" />
+            </Array>
+        </Object>
+
+
+        <!--StreamWater-->
+        <Object Class="MaterialDefinition" Name="StreamWater" Type="DeferredTransparent">
+            <Array Name="Properties">
+                <String>ArtistSelectable</String>
+                <String>SemiTransparent</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Opaque2" Effect="StreamWater.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="Color" Effect="WaterColor.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="rigid_depth.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="CastRSM" Effect="objectglass_rsm.fxo" InputLayout="Object" />
+                <Object Class="DrawStyle" Name="MiniMap" Effect="StreamWater.fxo" InputLayout="Object" />
+            </Array>
+        </Object>        
+        
+
+        <!--CharacterStealth-->
+        <Object Class="MaterialDefinition" Name="CharacterStealth" Type="Stealth">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Stealth"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Opaque" Effect="CharacterStealth.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="Normal" Effect="CharacterStealth.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterStealthLameColor.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="Distortion" Effect="CharacterStealth_AddDistortion.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="CharacterStealth_Depth.fxo" InputLayout="Character" />
+            </Array>
+        </Object>
+      
+
+        <!--BumpSkinStealth-->
+        <Object Class="MaterialDefinition" Name="BumpSkinStealth" Type="Stealth">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+              <Object Class="Parameter" Name="EffectName" Variable="Stealth"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Opaque" Effect="BumpSkinStealth.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="Normal" Effect="BumpSkinStealth.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpSkinStealthLameColor.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="Distortion" Effect="BumpSkinStealth_AddDistortion.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="BumpSkinStealth_Depth.fxo" InputLayout="BumpUVSkin" />
+            </Array>
+        </Object>
+
+
+        <!--CharacterRigidStealth-->
+        <Object Class="MaterialDefinition" Name="CharacterRigidStealth" Type="Stealth">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Stealth"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Opaque" Effect="CharacterRigidStealth.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="Normal" Effect="CharacterRigidStealth.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterRigidStealthLameColor.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="Distortion" Effect="CharacterRigidStealth_AddDistortion.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="CastShadow" Effect="CharacterRigidStealth_Depth.fxo" InputLayout="CharacterRigid" />
+            </Array>
+        </Object>
+        
+
+        <!--CharacterShield-->
+        <Object Class="MaterialDefinition" Name="CharacterShield" Type="Shield">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Shield"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="CharacterShield_AddDistortion.fxo" InputLayout="Character" />
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterShield_DistortionColor.fxo" InputLayout="Character" />
+            </Array>
+        </Object>
+        
+
+        <!--BumpSkinShield-->
+        <Object Class="MaterialDefinition" Name="BumpSkinShield" Type="Shield">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <String>Skinned</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Shield"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="BumpSkinShield_AddDistortion.fxo" InputLayout="BumpUVSkin" />
+                <Object Class="DrawStyle" Name="Glow" Effect="BumpSkinShield_DistortionColor.fxo" InputLayout="BumpUVSkin" />
+            </Array>
+        </Object>
+
+
+        <!--CharacterRigidShield-->
+        <Object Class="MaterialDefinition" Name="CharacterRigidShield" Type="Shield">
+            <Array Name="Properties">
+                <String>ArtistModelMaterialSelectable</String>
+                <Object Class="Parameter" Name="EffectName" Variable="Shield"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="CharacterRigidShield_AddDistortion.fxo" InputLayout="CharacterRigid" />
+                <Object Class="DrawStyle" Name="Glow" Effect="CharacterRigidShield_DistortionColor.fxo" InputLayout="CharacterRigid" />
+            </Array>
+        </Object>
+        
+
+        <!--ForceField-->
+        <Object Class="MaterialDefinition" Name="ForceField" Type="ForceField">
+            <Array Name="Properties">
+                <String>SemiTransparent</String>
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="ForceFieldDistortion.fxo" InputLayout="ForceField" />
+                <Object Class="DrawStyle" Name="Glow" Effect="ForceFieldColor.fxo" InputLayout="ForceField" />
+            </Array>
+        </Object>
+        
+
+        <!--ForceField_planar-->
+        <Object Class="MaterialDefinition" Name="ForceField_planar" Type="ForceField">
+            <Array Name="Properties">
+                <String>SemiTransparent</String>
+                <String>ArtistSelectable</String>
+                <Object Class="StringParameter" Type="ValidEffect" Name="Visualizer" Value="RigidLODs"/>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Distortion" Effect="ForceFieldDistortion_planar.fxo" InputLayout="ForceField" />
+                <Object Class="DrawStyle" Name="Glow" Effect="ForceFieldColor_planar.fxo" InputLayout="ForceField" />
+            </Array>
+        </Object>
+        
+
+        <!--DebugObjectTranslucent-->
+        <Object Class="MaterialDefinition" Name="DebugObjectTranslucent" Type="DebugTranslucent">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="DebugObjectTranslucent.fxo" InputLayout="DebugObject" />
+            </Array>
+        </Object>
+        
+
+        <!--DebugVehicleTranslucent-->
+        <Object Class="MaterialDefinition" Name="DebugVehicleTranslucent" Type="DebugTranslucent">
+            <Array Name="Properties">
+                <String>RigidSkinned</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="DebugVehicleTranslucent.fxo" InputLayout="DebugVehicle" />
+            </Array>
+        </Object>
+        
+
+        <!--DebugCharacterTranslucent-->
+        <Object Class="MaterialDefinition" Name="DebugCharacterTranslucent" Type="DebugTranslucent">
+            <Array Name="Properties">
+                <String>Skinned</String>
+            </Array>
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="DebugCharacterTranslucent.fxo" InputLayout="DebugCharacter" />
+            </Array>
+        </Object>
+        
+
+        <!--TileQuad-->
+        <Object Class="MaterialDefinition" Name="TileQuad" Type="TileQuad">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="TileQuad.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+        
+
+        <!--Flash-->
+        <Object Class="MaterialDefinition" Name="Flash" Type="Flash" />
+
+        <Object Class="MaterialDefinition" Name="LensEffects" Type="LensEffects">
+            <Array Name="DrawStyles">
+                <Object Class="DrawStyle" Name="Normal" Effect="LensEffects.fxo" InputLayout="Post" />
+            </Array>
+        </Object>
+    </Array>
+</Object>

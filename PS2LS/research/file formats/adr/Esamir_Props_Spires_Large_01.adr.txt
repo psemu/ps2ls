@@ -1,0 +1,34 @@
+02 50
+01 26
+Esamir_Props_Spires_Large_01_LOD0.dme
+
+02 26
+Esamir_Props_Spires_Large_01_Lod0.dma
+
+05 8C 8E FE
+03 01 01 44 
+01 29 03 04 
+66 4E 66 B8
+
+04 - index?
+09 - string length (!)
+default0
+
+05 - index
+16 - string length
+medium_slate_blue.dds
+
+01 29 03 04 
+F8 82 E6 4B
+
+04 09
+default0
+
+05 16
+Shared_Natural_DN.dds
+
+01 1C 03 04 
+B4 E3 25 E8
+
+
+

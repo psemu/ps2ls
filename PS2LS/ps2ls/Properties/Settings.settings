@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ps2ls.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProjectHomeURL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://code.google.com/p/ps2ls/</Value>
+    </Setting>
+    <Setting Name="ProjectSourceURL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://code.google.com/p/ps2ls/source/checkout</Value>
+    </Setting>
+    <Setting Name="ProjectWikiURL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://code.google.com/p/ps2ls/w/list</Value>
+    </Setting>
+    <Setting Name="ProjectNewIssueURL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://code.google.com/p/ps2ls/issues/entry</Value>
+    </Setting>
+    <Setting Name="AssetDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

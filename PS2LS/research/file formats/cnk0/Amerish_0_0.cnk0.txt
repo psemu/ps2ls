@@ -1,0 +1,5 @@
+CNK0
+01 00 00 00 	- version
+C5 B3 		- 46021 (?)
+15 00 		- 21 (?)
+59 25 0A 00 	- length of file, from next byte offset

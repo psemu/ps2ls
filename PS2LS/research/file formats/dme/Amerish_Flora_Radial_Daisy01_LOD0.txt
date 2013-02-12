@@ -1,0 +1,32 @@
+Amerish_Flora_Radial_Daisy01_LOD0.dme
+DME Version = 4
+Bytes Per Vertex = 44
+Vertex Blocks = 1 <- this seems to be the deciding factor of the format of the vertex data, perhaps this is more of a 'vertex data type' flag.
+
+Vertex 56 (last one)
+
+1.  0.8267132 ;  0.8267132^2 = 0.68345471505424
+2.  0.1515246 ;  0.1515246^2 = 0.02295970440516
+3. -0.5418369 ; -0.5418369^2 = 0.29358722620161
+
+L = 0.68345471505424 + 0.02295970440516 + 0.29358722620161 = ~1.0
+
+first 12 bytes are a unit vector normal!
+
+4. -0.04840409 ; 0.0023429559287281 = 
+5. 0.9786358   ; 0.95772802904164   = 
+6. 0.1998224   ; 0.03992899154176   = 
+
+0.0023429559287281 + 0.95772802904164 + 0.03992899154176 = ~1.0
+
+v1 ( 0.82671320, 0.1515246, -0.5418369)
+v2 (-0.04840409, 0.9786358,  0.1998224)
+
+second 12 bytes is another unit vector normal and appears to be some sort of tangent as it is perpendicular to the first one.
+
+dot product of vertex 1 and vertex 2:
+
+acos(-0.040016300136988 + 0.14828739814068 + -0.10827114976656) = ~90.0 degrees
+PROOF RIGHT THERE^^
+
+hope to science the next 8 bytes are UVs...
