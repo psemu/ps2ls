@@ -2,8 +2,6 @@
 varying vec3 lightDirection;
 varying vec2 texcood;
 
-uniform sampler2D texture;
-
 void main()
 {
 	const vec4 ambientColor = vec4(0.25, 0.25, 0.25, 1.0);

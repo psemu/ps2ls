@@ -53,12 +53,6 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.meshesComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label99 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.meshVertexCountLabel = new System.Windows.Forms.Label();
-            this.meshTriangleCountLabel = new System.Windows.Forms.Label();
-            this.meshBytesPerVertexLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -71,8 +65,15 @@
             this.meshUnknown4Label = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.meshVertexBlockCountLabel = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.meshBytesPerVertexLabel = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.meshTriangleCountLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.meshVertexCountLabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.modelVersionLabel = new System.Windows.Forms.Label();
+            this.TexturesTabPage = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.TexturesTabPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -389,60 +391,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(337, 123);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(3, 40);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(76, 13);
-            this.label99.TabIndex = 1;
-            this.label99.Text = "Triangle Count";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(3, 60);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(85, 13);
-            this.label88.TabIndex = 2;
-            this.label88.Text = "Bytes Per Vertex";
-            // 
-            // meshVertexCountLabel
-            // 
-            this.meshVertexCountLabel.AutoSize = true;
-            this.meshVertexCountLabel.Location = new System.Drawing.Point(107, 20);
-            this.meshVertexCountLabel.Name = "meshVertexCountLabel";
-            this.meshVertexCountLabel.Size = new System.Drawing.Size(13, 13);
-            this.meshVertexCountLabel.TabIndex = 4;
-            this.meshVertexCountLabel.Text = "0";
-            // 
-            // meshTriangleCountLabel
-            // 
-            this.meshTriangleCountLabel.AutoSize = true;
-            this.meshTriangleCountLabel.Location = new System.Drawing.Point(107, 40);
-            this.meshTriangleCountLabel.Name = "meshTriangleCountLabel";
-            this.meshTriangleCountLabel.Size = new System.Drawing.Size(13, 13);
-            this.meshTriangleCountLabel.TabIndex = 5;
-            this.meshTriangleCountLabel.Text = "0";
-            // 
-            // meshBytesPerVertexLabel
-            // 
-            this.meshBytesPerVertexLabel.AutoSize = true;
-            this.meshBytesPerVertexLabel.Location = new System.Drawing.Point(107, 60);
-            this.meshBytesPerVertexLabel.Name = "meshBytesPerVertexLabel";
-            this.meshBytesPerVertexLabel.Size = new System.Drawing.Size(13, 13);
-            this.meshBytesPerVertexLabel.TabIndex = 6;
-            this.meshBytesPerVertexLabel.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Vertex Count";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -551,6 +499,60 @@
             this.meshVertexBlockCountLabel.TabIndex = 18;
             this.meshVertexBlockCountLabel.Text = "0";
             // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(3, 60);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(85, 13);
+            this.label88.TabIndex = 2;
+            this.label88.Text = "Bytes Per Vertex";
+            // 
+            // meshBytesPerVertexLabel
+            // 
+            this.meshBytesPerVertexLabel.AutoSize = true;
+            this.meshBytesPerVertexLabel.Location = new System.Drawing.Point(107, 60);
+            this.meshBytesPerVertexLabel.Name = "meshBytesPerVertexLabel";
+            this.meshBytesPerVertexLabel.Size = new System.Drawing.Size(13, 13);
+            this.meshBytesPerVertexLabel.TabIndex = 6;
+            this.meshBytesPerVertexLabel.Text = "0";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(3, 40);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(76, 13);
+            this.label99.TabIndex = 1;
+            this.label99.Text = "Triangle Count";
+            // 
+            // meshTriangleCountLabel
+            // 
+            this.meshTriangleCountLabel.AutoSize = true;
+            this.meshTriangleCountLabel.Location = new System.Drawing.Point(107, 40);
+            this.meshTriangleCountLabel.Name = "meshTriangleCountLabel";
+            this.meshTriangleCountLabel.Size = new System.Drawing.Size(13, 13);
+            this.meshTriangleCountLabel.TabIndex = 5;
+            this.meshTriangleCountLabel.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Vertex Count";
+            // 
+            // meshVertexCountLabel
+            // 
+            this.meshVertexCountLabel.AutoSize = true;
+            this.meshVertexCountLabel.Location = new System.Drawing.Point(107, 20);
+            this.meshVertexCountLabel.Name = "meshVertexCountLabel";
+            this.meshVertexCountLabel.Size = new System.Drawing.Size(13, 13);
+            this.meshVertexCountLabel.TabIndex = 4;
+            this.meshVertexCountLabel.Text = "0";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -568,6 +570,16 @@
             this.modelVersionLabel.Size = new System.Drawing.Size(13, 13);
             this.modelVersionLabel.TabIndex = 20;
             this.modelVersionLabel.Text = "0";
+            // 
+            // TexturesTabPage
+            // 
+            this.TexturesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.TexturesTabPage.Name = "TexturesTabPage";
+            this.TexturesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.TexturesTabPage.Size = new System.Drawing.Size(476, 135);
+            this.TexturesTabPage.TabIndex = 2;
+            this.TexturesTabPage.Text = "Textures";
+            this.TexturesTabPage.UseVisualStyleBackColor = true;
             // 
             // ModelBrowserModelStats
             // 
@@ -638,6 +650,7 @@
         private System.Windows.Forms.Label meshVertexBlockCountLabel;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label modelVersionLabel;
+        private System.Windows.Forms.TabPage TexturesTabPage;
 
     }
 }

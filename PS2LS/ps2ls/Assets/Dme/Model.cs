@@ -111,6 +111,7 @@ namespace ps2ls.Assets.Dme
                 if (mesh != null)
                 {
                     model.Meshes[i] = mesh;
+                  
                 }
             }
 

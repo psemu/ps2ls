@@ -12,6 +12,7 @@ using OpenTK;
 using OpenTK.Input;
 using OpenTK.Graphics.OpenGL;
 using ps2ls.Assets;
+using ps2ls.Assets.Pack;
 
 namespace ps2ls.Forms
 {
@@ -93,6 +94,11 @@ namespace ps2ls.Forms
         private void reportIssueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(Properties.Settings.Default.ProjectNewIssueURL);
+        }
+
+        private void compareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AssetManager.Instance.WriteFileListingToFile("FileListing.txt");
         }
     }
 }

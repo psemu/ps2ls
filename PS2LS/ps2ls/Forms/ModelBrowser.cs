@@ -39,7 +39,9 @@ namespace ps2ls.Forms
 
         private Model model = null;
         private ColorDialog backgroundColorDialog = new ColorDialog();
-        private Int32 shaderProgram = 0;
+        private Int32 texturedShader = 0;
+        private int untexturedShader = 0;
+        private int currentShader = 0;
         private List<ToolStripButton> renderModeButtons = new List<ToolStripButton>();
 
         #region Mesh Colors
@@ -121,21 +123,11 @@ namespace ps2ls.Forms
             }
         }
 
-        //TODO: move this elsehwere
+
+
+
         private void createShaderProgram()
         {
-            ErrorCode e;
-
-            GL.GetError(); //clear error
-
-            shaderProgram = GL.CreateProgram();
-            if ((e = GL.GetError()) != ErrorCode.NoError) { Console.WriteLine(e); }
-
-            Int32 vertexShader = GL.CreateShader(ShaderType.VertexShader);
-            if ((e = GL.GetError()) != ErrorCode.NoError) { Console.WriteLine(e); }
-            Int32 fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
-            if ((e = GL.GetError()) != ErrorCode.NoError) { Console.WriteLine(e); }
-
             //TODO: Use external shader source files.
             String vertexShaderSource = @"
 void main(void)
@@ -156,18 +148,82 @@ void main(void)
 }
 ";
 
+            texturedShader = createShaderProgram(vertexShaderSource, fragmentShaderSource);
+
+            vertexShaderSource = @"
+varying vec3 normal;
+varying vec3 lightDirection;
+
+
+void main() 
+{ 
+    gl_Position = ftransform();
+
+    gl_FrontColor = gl_Color;
+
+
+   
+    normal = gl_NormalMatrix * gl_Normal;
+
+    lightDirection = vec3(1, -1, 1);
+}
+";
+            fragmentShaderSource = @"
+varying vec3 normal; 
+varying vec3 lightDirection;
+
+void main()
+{
+	const vec4 ambientColor = vec4(0.25, 0.25, 0.25, 1.0);
+    const vec4 diffuseColor = vec4(1.0, 1.0, 1.0, 1.0);
+
+    vec3 normalizedNormal = normalize(normal);
+    vec3 noralizedLightDirection = normalize(lightDirection);
+
+    float diffuseTerm = clamp(dot(normalizedNormal, noralizedLightDirection), 0.0, 1.0);
+
+    gl_FragColor = gl_Color * (ambientColor + (diffuseColor * diffuseTerm));
+ 
+
+}
+";
+            untexturedShader = createShaderProgram(vertexShaderSource, fragmentShaderSource);
+
+            currentShader = texturedShader;
+
+        }
+
+        //TODO: move this elsehwere
+        private int createShaderProgram(string vertexShaderSource, string fragmentShaderSource)
+        {
+            ErrorCode e;
+
+            GL.GetError(); //clear error
+
+            int shaderProgram = GL.CreateProgram();
+            if ((e = GL.GetError()) != ErrorCode.NoError) { Console.WriteLine(e); }
+
+            Int32 vertexShader = GL.CreateShader(ShaderType.VertexShader);
+            if ((e = GL.GetError()) != ErrorCode.NoError) { Console.WriteLine(e); }
+            Int32 fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
+            if ((e = GL.GetError()) != ErrorCode.NoError) { Console.WriteLine(e); }
+
+          
+
             compileShader(vertexShader, vertexShaderSource);
             int res = 0;
             GL.GetShader(vertexShader, ShaderParameter.CompileStatus, out res);
             if ((All)res == All.False)
             {
+                MessageBox.Show(GL.GetShaderInfoLog(vertexShader));
                 throw new Exception(GL.GetShaderInfoLog(vertexShader));
             }
             compileShader(fragmentShader, fragmentShaderSource);
             GL.GetShader(fragmentShader, ShaderParameter.CompileStatus, out res);
             if ((All)res == All.False)
             {
-                throw new Exception(GL.GetShaderInfoLog(vertexShader));
+                MessageBox.Show(GL.GetShaderInfoLog(fragmentShader));
+                throw new Exception(GL.GetShaderInfoLog(fragmentShader));
             }
 
             GL.AttachShader(shaderProgram, fragmentShader);
@@ -193,6 +249,8 @@ void main(void)
                 GL.DeleteShader(vertexShader);
                 if ((e = GL.GetError()) != ErrorCode.NoError) { Console.WriteLine(e); }
             }
+
+            return shaderProgram;
         }
 
         private void update()
@@ -256,7 +314,7 @@ void main(void)
 
                 GL.PushAttrib(AttribMask.PolygonBit | AttribMask.EnableBit | AttribMask.LightingBit | AttribMask.CurrentBit);
 
-                GL.UseProgram(shaderProgram);
+                GL.UseProgram(currentShader);
 
                 GL.Enable(EnableCap.DepthTest);
                 GL.Enable(EnableCap.CullFace);
@@ -269,8 +327,12 @@ void main(void)
                 GL.ActiveTexture(TextureUnit.Texture0);
                 GL.BindTexture(TextureTarget.Texture2D, currentTexture);
 
-                int loc = GL.GetUniformLocation(shaderProgram, "colorMap");
-                GL.Uniform1(loc, 0);
+                if (currentShader == texturedShader)
+                {
+
+                    int loc = GL.GetUniformLocation(currentShader, "colorMap");
+                    GL.Uniform1(loc, 0);
+                }
 
                 for (Int32 i = 0; i < model.Meshes.Length; ++i)
                 {
@@ -326,6 +388,7 @@ void main(void)
                         GL.EnableClientState(ArrayCap.NormalArray);
                         GL.NormalPointer(NormalPointerType.Float, mesh.VertexStreams[normalStream].BytesPerVertex, normalData + normalOffset);
                     }
+                    
 
                     //texture coordiantes
                     VertexLayout.Entry.DataTypes texCoord0DataType = VertexLayout.Entry.DataTypes.None;
@@ -525,6 +588,7 @@ void main(void)
             searchModelsText.Clear();
         }
 
+      
         private void modelsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Asset asset = null;
@@ -544,9 +608,17 @@ void main(void)
             ModelBrowserModelStats1.Model = model;
 
             materialSelectionComboBox.Items.Clear();
-            foreach (string textureName in model.TextureStrings)
+            if (model.TextureStrings.Count == 0)
             {
-                materialSelectionComboBox.Items.Add(textureName);
+                currentShader = untexturedShader;
+            }
+            else
+            {
+                foreach (string textureName in model.TextureStrings)
+                {
+                    materialSelectionComboBox.Items.Add(textureName);
+                }
+                currentShader = texturedShader;
             }
             materialSelectionComboBox.SelectedIndex = 0;
 
