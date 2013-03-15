@@ -44,6 +44,10 @@ namespace ps2ls.Forms
         private int currentShader = 0;
         private List<ToolStripButton> renderModeButtons = new List<ToolStripButton>();
 
+        private List<int> textures = new List<int>(new int[]{0,0,0,0,0});
+
+        public int gray;
+
         #region Mesh Colors
         // a series of nice pastel colors we'll use to color meshes
         Color[] meshColors = {
@@ -96,6 +100,8 @@ namespace ps2ls.Forms
 
             renderModeButtons.Add(renderModeWireframeButton);
             renderModeButtons.Add(renderModeSmoothButton);
+
+           
         }
 
         //TODO: move this elsehwere
@@ -190,6 +196,8 @@ void main()
             untexturedShader = createShaderProgram(vertexShaderSource, fragmentShaderSource);
 
             currentShader = texturedShader;
+
+            gray = LoadTexture("grey.dds");
 
         }
 
@@ -324,19 +332,21 @@ void main()
                 GL.CullFace(CullFaceMode.Back);
                 GL.FrontFace(FrontFaceDirection.Cw);
 
-                GL.ActiveTexture(TextureUnit.Texture0);
-                GL.BindTexture(TextureTarget.Texture2D, currentTexture);
-
-                if (currentShader == texturedShader)
-                {
-
-                    int loc = GL.GetUniformLocation(currentShader, "colorMap");
-                    GL.Uniform1(loc, 0);
-                }
+             
 
                 for (Int32 i = 0; i < model.Meshes.Length; ++i)
                 {
                     Mesh mesh = model.Meshes[i];
+
+                    GL.ActiveTexture(TextureUnit.Texture0);
+                    GL.BindTexture(TextureTarget.Texture2D, textures[i]);
+
+                    if (currentShader == texturedShader)
+                    {
+
+                        int loc = GL.GetUniformLocation(currentShader, "colorMap");
+                        GL.Uniform1(loc, 0);
+                    }
 
                     //pin handles to stream data
                     GCHandle[] streamDataGCHandles = new GCHandle[mesh.VertexStreams.Length];
@@ -607,6 +617,11 @@ void main()
 
             ModelBrowserModelStats1.Model = model;
 
+            for (int i = 0; i < model.Meshes.Length; i++)
+            {
+                textures[i] = gray;
+            }
+
             materialSelectionComboBox.Items.Clear();
             if (model.TextureStrings.Count == 0)
             {
@@ -614,6 +629,7 @@ void main()
             }
             else
             {
+
                 foreach (string textureName in model.TextureStrings)
                 {
                     materialSelectionComboBox.Items.Add(textureName);
@@ -744,18 +760,29 @@ void main()
         private void materialSelectionComboBox_Changed(object sender, EventArgs e)
         {
             // Set the new texture
-            Int32 texture = 0;
+            currentTexture = LoadTexture(materialSelectionComboBox.Text); 
+        }
 
-            MemoryStream textureMemoryStream = AssetManager.Instance.CreateAssetMemoryStreamByName(materialSelectionComboBox.Text);
-            currentTexture = TextureManager.LoadFromStream(textureMemoryStream);
+        private int LoadTexture(string name)
+        {
+            MemoryStream textureMemoryStream = AssetManager.Instance.CreateAssetMemoryStreamByName(name);
+            return TextureManager.LoadFromStream(textureMemoryStream);
+        }
 
-            
-           
+        public void SetTextureForMesh(int meshID, string name)
+        {
+            //if (textures[meshID] != gray) GL.DeleteTexture(textures[meshID]);
+            textures[meshID] = LoadTexture(name);
         }
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            backgroundColorDialog.ShowDialog();
         }
     }
 }

@@ -42,8 +42,15 @@ namespace ps2ls.Assets.Dme
         public UInt32 IndexCount { get; private set; }
         public UInt32 IndexSize { get; private set; }
 
+        public string AssignedTexture
+        {
+            get;
+            set;
+        }
+
         private Mesh()
         {
+            AssignedTexture = "grey.dds";
         }
 
         public static Mesh LoadFromStream(Stream stream, ICollection<Dma.Material> materials)

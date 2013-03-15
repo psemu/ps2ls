@@ -53,6 +53,7 @@
             this.renderModeSmoothButton = new System.Windows.Forms.ToolStripButton();
             this.materialSelectionComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.searchModelsTimer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -219,9 +220,9 @@
             arcBallCamera1.Yaw = -0.7853982F;
             this.glControl1.Camera = arcBallCamera1;
             this.glControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.glControl1.Location = new System.Drawing.Point(0, 25);
+            this.glControl1.Location = new System.Drawing.Point(0, 27);
             this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(522, 575);
+            this.glControl1.Size = new System.Drawing.Size(522, 573);
             this.glControl1.TabIndex = 1;
             this.glControl1.VSync = false;
             this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
@@ -234,6 +235,7 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showAxesButton,
+            this.toolStripButton1,
             this.showBoundingBoxButton,
             this.toolStripSeparator3,
             this.renderModeWireframeButton,
@@ -241,7 +243,7 @@
             this.materialSelectionComboBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(522, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(522, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -254,7 +256,7 @@
             this.showAxesButton.Image = global::ps2ls.Properties.Resources.axes;
             this.showAxesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showAxesButton.Name = "showAxesButton";
-            this.showAxesButton.Size = new System.Drawing.Size(23, 22);
+            this.showAxesButton.Size = new System.Drawing.Size(23, 24);
             this.showAxesButton.Text = "Show Axes";
             this.showAxesButton.Click += new System.EventHandler(this.showAxesButton_Click);
             // 
@@ -266,14 +268,14 @@
             this.showBoundingBoxButton.Image = global::ps2ls.Properties.Resources.sphere_aabb2;
             this.showBoundingBoxButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showBoundingBoxButton.Name = "showBoundingBoxButton";
-            this.showBoundingBoxButton.Size = new System.Drawing.Size(23, 22);
+            this.showBoundingBoxButton.Size = new System.Drawing.Size(23, 24);
             this.showBoundingBoxButton.Text = "Show Bounding Box";
             this.showBoundingBoxButton.Click += new System.EventHandler(this.showBoundingBoxButton_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // renderModeWireframeButton
             // 
@@ -282,7 +284,7 @@
             this.renderModeWireframeButton.Image = global::ps2ls.Properties.Resources.wireframe;
             this.renderModeWireframeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.renderModeWireframeButton.Name = "renderModeWireframeButton";
-            this.renderModeWireframeButton.Size = new System.Drawing.Size(23, 22);
+            this.renderModeWireframeButton.Size = new System.Drawing.Size(23, 24);
             this.renderModeWireframeButton.Text = "Show Wireframe";
             this.renderModeWireframeButton.ToolTipText = "Wireframe (F5)";
             this.renderModeWireframeButton.CheckedChanged += new System.EventHandler(this.renderModeWireframeButton_CheckedChanged);
@@ -296,7 +298,7 @@
             this.renderModeSmoothButton.Image = global::ps2ls.Properties.Resources.smooth;
             this.renderModeSmoothButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.renderModeSmoothButton.Name = "renderModeSmoothButton";
-            this.renderModeSmoothButton.Size = new System.Drawing.Size(23, 22);
+            this.renderModeSmoothButton.Size = new System.Drawing.Size(23, 24);
             this.renderModeSmoothButton.Text = "Smooth";
             this.renderModeSmoothButton.ToolTipText = "Smooth (F6)";
             this.renderModeSmoothButton.CheckedChanged += new System.EventHandler(this.renderModeSmoothButton_CheckedChanged);
@@ -305,7 +307,7 @@
             // 
             this.materialSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.materialSelectionComboBox.Name = "materialSelectionComboBox";
-            this.materialSelectionComboBox.Size = new System.Drawing.Size(400, 25);
+            this.materialSelectionComboBox.Size = new System.Drawing.Size(400, 23);
             this.materialSelectionComboBox.Sorted = true;
             this.materialSelectionComboBox.SelectedIndexChanged += new System.EventHandler(this.materialSelectionComboBox_Changed);
             // 
@@ -313,6 +315,16 @@
             // 
             this.searchModelsTimer.Interval = 500;
             this.searchModelsTimer.Tick += new System.EventHandler(this.searchModelsTimer_Tick);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::ps2ls.Properties.Resources.tree_small;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // ModelBrowser
             // 
@@ -362,5 +374,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton showAutoLODModelsButton;
         private System.Windows.Forms.ToolStripComboBox materialSelectionComboBox;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

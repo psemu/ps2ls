@@ -74,6 +74,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.modelVersionLabel = new System.Windows.Forms.Label();
             this.TexturesTabPage = new System.Windows.Forms.TabPage();
+            this.textureComboBox1 = new System.Windows.Forms.ComboBox();
+            this.texturesComboBox2 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -82,6 +86,7 @@
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.TexturesTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -573,6 +578,10 @@
             // 
             // TexturesTabPage
             // 
+            this.TexturesTabPage.Controls.Add(this.label18);
+            this.TexturesTabPage.Controls.Add(this.label17);
+            this.TexturesTabPage.Controls.Add(this.texturesComboBox2);
+            this.TexturesTabPage.Controls.Add(this.textureComboBox1);
             this.TexturesTabPage.Location = new System.Drawing.Point(4, 22);
             this.TexturesTabPage.Name = "TexturesTabPage";
             this.TexturesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -580,6 +589,44 @@
             this.TexturesTabPage.TabIndex = 2;
             this.TexturesTabPage.Text = "Textures";
             this.TexturesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // textureComboBox1
+            // 
+            this.textureComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.textureComboBox1.FormattingEnabled = true;
+            this.textureComboBox1.Location = new System.Drawing.Point(57, 6);
+            this.textureComboBox1.Name = "textureComboBox1";
+            this.textureComboBox1.Size = new System.Drawing.Size(36, 21);
+            this.textureComboBox1.TabIndex = 0;
+            this.textureComboBox1.SelectedIndexChanged += new System.EventHandler(this.textureComboBox1_SelectedIndexChanged);
+            // 
+            // texturesComboBox2
+            // 
+            this.texturesComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.texturesComboBox2.FormattingEnabled = true;
+            this.texturesComboBox2.Location = new System.Drawing.Point(151, 6);
+            this.texturesComboBox2.Name = "texturesComboBox2";
+            this.texturesComboBox2.Size = new System.Drawing.Size(322, 21);
+            this.texturesComboBox2.TabIndex = 1;
+            this.texturesComboBox2.SelectedIndexChanged += new System.EventHandler(this.texturesComboBox2_SelectedIndexChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(36, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Mesh:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(99, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(46, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Texture:";
             // 
             // ModelBrowserModelStats
             // 
@@ -599,6 +646,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.TexturesTabPage.ResumeLayout(false);
+            this.TexturesTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -651,6 +700,10 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label modelVersionLabel;
         private System.Windows.Forms.TabPage TexturesTabPage;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox texturesComboBox2;
+        private System.Windows.Forms.ComboBox textureComboBox1;
 
     }
 }

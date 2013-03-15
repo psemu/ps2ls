@@ -37,12 +37,23 @@ namespace ps2ls.Forms
                 modelVersionLabel.Text = model != null ? model.Version.ToString() : "0";
 
                 meshesComboBox.Items.Clear();
+                textureComboBox1.Items.Clear();
+                texturesComboBox2.Items.Clear();
+
+                texturesComboBox2.Visible = false;
+                label18.Visible = false;
 
                 if (model != null)
                 {
                     for (Int32 i = 0; i < model.Meshes.Length; ++i)
                     {
                         meshesComboBox.Items.Add("Mesh " + i);
+                        textureComboBox1.Items.Add("" + i);
+                    }
+
+                    for (int i = 0; i < model.TextureStrings.Count; i++)
+                    {
+                        texturesComboBox2.Items.Add(model.TextureStrings[i]);
                     }
                 }
 
@@ -50,6 +61,8 @@ namespace ps2ls.Forms
                 {
                     meshesComboBox.SelectedIndex = 0;
                 }
+
+
             }
         }
 
@@ -71,6 +84,18 @@ namespace ps2ls.Forms
             meshUnknown3Label.Text = mesh != null ? mesh.Unknown3.ToString() : "0";
             meshUnknown4Label.Text = mesh != null ? mesh.Unknown4.ToString() : "0";
             meshVertexBlockCountLabel.Text = mesh != null ? mesh.VertexStreams.Length.ToString() : "0";
+        }
+
+        private void textureComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            texturesComboBox2.Visible = true;
+            texturesComboBox2.SelectedItem = null;
+            label18.Visible = true;
+        }
+
+        private void texturesComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ModelBrowser.Instance.SetTextureForMesh(int.Parse((string)textureComboBox1.SelectedItem), (string)texturesComboBox2.SelectedItem);
         }
     }
 }
