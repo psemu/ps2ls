@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.soundListBox = new ps2ls.Forms.Controls.CustomListBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.searchBox = new System.Windows.Forms.ToolStripTextBox();
@@ -38,11 +39,10 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.filesListed = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StopButton = new System.Windows.Forms.Button();
+            this.PlayPause = new System.Windows.Forms.Button();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
-            this.PlayPause = new System.Windows.Forms.Button();
-            this.StopButton = new System.Windows.Forms.Button();
-            this.soundListBox = new ps2ls.Forms.Controls.CustomListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,6 +71,21 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 600);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // soundListBox
+            // 
+            this.soundListBox.AssetType = ps2ls.Assets.Pack.Asset.Types.FSB;
+            this.soundListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.soundListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.soundListBox.Image = global::ps2ls.Properties.Resources.music;
+            this.soundListBox.Items.AddRange(new object[] {
+            "Input a search term to continue"});
+            this.soundListBox.Location = new System.Drawing.Point(0, 25);
+            this.soundListBox.Name = "soundListBox";
+            this.soundListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.soundListBox.Size = new System.Drawing.Size(266, 553);
+            this.soundListBox.TabIndex = 0;
+            this.soundListBox.SelectedIndexChanged += new System.EventHandler(this.soundListBox_SelectedIndexChanged);
             // 
             // toolStrip1
             // 
@@ -143,6 +158,26 @@
             this.filesListed.Size = new System.Drawing.Size(30, 17);
             this.filesListed.Text = "0 / 0";
             // 
+            // StopButton
+            // 
+            this.StopButton.Location = new System.Drawing.Point(199, 172);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(75, 23);
+            this.StopButton.TabIndex = 2;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            // 
+            // PlayPause
+            // 
+            this.PlayPause.Location = new System.Drawing.Point(199, 143);
+            this.PlayPause.Name = "PlayPause";
+            this.PlayPause.Size = new System.Drawing.Size(75, 23);
+            this.PlayPause.TabIndex = 1;
+            this.PlayPause.Text = "Play/Pause";
+            this.PlayPause.UseVisualStyleBackColor = true;
+            this.PlayPause.Click += new System.EventHandler(this.PlayPause_Click);
+            // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
@@ -157,40 +192,6 @@
             // 
             this.refreshTimer.Interval = 500;
             this.refreshTimer.Tick += new System.EventHandler(this.refreshTimer_Tick);
-            // 
-            // PlayPause
-            // 
-            this.PlayPause.Location = new System.Drawing.Point(199, 143);
-            this.PlayPause.Name = "PlayPause";
-            this.PlayPause.Size = new System.Drawing.Size(75, 23);
-            this.PlayPause.TabIndex = 1;
-            this.PlayPause.Text = "Play/Pause";
-            this.PlayPause.UseVisualStyleBackColor = true;
-            this.PlayPause.Click += new System.EventHandler(this.PlayPause_Click);
-            // 
-            // StopButton
-            // 
-            this.StopButton.Location = new System.Drawing.Point(199, 172);
-            this.StopButton.Name = "StopButton";
-            this.StopButton.Size = new System.Drawing.Size(75, 23);
-            this.StopButton.TabIndex = 2;
-            this.StopButton.Text = "Stop";
-            this.StopButton.UseVisualStyleBackColor = true;
-            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
-            // 
-            // soundListBox
-            // 
-            this.soundListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.soundListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.soundListBox.Image = global::ps2ls.Properties.Resources.music;
-            this.soundListBox.Items.AddRange(new object[] {
-            "Input a search term to continue"});
-            this.soundListBox.Location = new System.Drawing.Point(0, 25);
-            this.soundListBox.Name = "soundListBox";
-            this.soundListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.soundListBox.Size = new System.Drawing.Size(266, 553);
-            this.soundListBox.TabIndex = 0;
-            this.soundListBox.SelectedIndexChanged += new System.EventHandler(this.soundListBox_SelectedIndexChanged);
             // 
             // SoundBrowser
             // 

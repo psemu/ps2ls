@@ -42,34 +42,10 @@ namespace ps2ls.Forms
 
         private void refreshImageListBox()
         {
-            imageListbox.Items.Clear();
-
-            List<Asset> assets = new List<Asset>();
-            List<Asset> images = null;
-
-            AssetManager.Instance.AssetsByType.TryGetValue(Asset.Types.DDS, out images);
-
-            if (images != null)
-            {
-                assets.AddRange(images);
-            }
-
-            assets.Sort(new Asset.NameComparer());
-
-            if (assets != null)
-            {
-                foreach (Asset asset in assets)
-                {
-                    if (asset.Name.IndexOf(searchText.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        imageListbox.Items.Add(asset);
-                    }
-
-                }
-            }
+            imageListbox.PopulateBox(searchText.Text);
 
             int count = imageListbox.Items.Count;
-            int max = assets != null ? assets.Count : 0;
+            int max = imageListbox.MaxCount;
 
             imagesCountLabel.Text = count + "/" + max;
 

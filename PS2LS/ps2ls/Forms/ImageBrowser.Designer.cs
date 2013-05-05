@@ -144,6 +144,7 @@
             // 
             // imageListbox
             // 
+            this.imageListbox.AssetType = ps2ls.Assets.Pack.Asset.Types.DDS;
             this.imageListbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageListbox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.imageListbox.FormattingEnabled = true;

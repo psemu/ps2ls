@@ -7,7 +7,7 @@ using ps2ls.Cameras;
 
 namespace ps2ls.Forms
 {
-    public class MaterialBrowserGLControl : CustomGLControl
+    public class MaterialBrowserGLControl : GLModelVeiwerControl
     {
         public ArcBallCamera Camera { get; set; }
 

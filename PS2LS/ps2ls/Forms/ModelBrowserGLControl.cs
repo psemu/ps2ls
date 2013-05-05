@@ -12,7 +12,7 @@ using OpenTK;
 
 namespace ps2ls.Forms
 {
-    public partial class ModelBrowserGLControl : CustomGLControl
+    public partial class ModelBrowserGLControl : GLModelVeiwerControl
     {
         private Point location;
         private bool rotating;

@@ -78,9 +78,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Adr\Adr.cs" />
+    <Compile Include="Assets\Adr\ActorSocket.cs" />
+    <Compile Include="Assets\Adr\ActorDefinition.cs" />
+    <Compile Include="Assets\Adr\TextureAlias.cs" />
     <Compile Include="Assets\Dma\Material.cs" />
     <Compile Include="Assets\Dme\BoneMap.cs" />
+    <Compile Include="Forms\ActorForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ActorForm.Designer.cs">
+      <DependentUpon>ActorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ImageBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,7 +126,7 @@
     </Compile>
     <Compile Include="Graphics\Materials\MaterialDefinition.cs" />
     <Compile Include="IO\BinaryReaderBigEndian.cs" />
-    <Compile Include="Forms\Controls\CustomGLControl.cs">
+    <Compile Include="Forms\Controls\GLModelVeiwerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Cameras\ArcBallCamera.cs" />
@@ -190,6 +198,9 @@
     </Compile>
     <Compile Include="TextureManager.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="Forms\ActorForm.resx">
+      <DependentUpon>ActorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\CustomListBox.resx">
       <DependentUpon>CustomListBox.cs</DependentUpon>
       <SubType>Designer</SubType>

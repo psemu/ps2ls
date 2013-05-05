@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using ps2ls.Assets.Pack;
 
 namespace ps2ls.Forms.Controls
 {
@@ -11,6 +12,13 @@ namespace ps2ls.Forms.Controls
     {
         public Image Image { get; set; }
 
+        public Asset.Types AssetType
+        {
+            get;
+            set;
+        }
+
+        public int MaxCount { get; protected set; }
         public CustomListBox()
         {
             this.DrawItem += new DrawItemEventHandler(this.CustomListBox_DrawItem);
@@ -38,6 +46,36 @@ namespace ps2ls.Forms.Controls
 
             e.Graphics.DrawString(text, e.Font, new SolidBrush(Color.Black), point);
             e.DrawFocusRectangle();
-        } 
+        }
+
+        public void PopulateBox(string searchText)
+        {
+            this.Items.Clear();
+
+            List<Asset> assets = new List<Asset>();
+            List<Asset> images = null;
+
+            AssetManager.Instance.AssetsByType.TryGetValue(AssetType, out images);
+
+            if (images != null)
+            {
+                assets.AddRange(images);
+            }
+
+            assets.Sort(new Asset.NameComparer());
+
+            if (assets != null)
+            {
+                foreach (Asset asset in assets)
+                {
+                    if (asset.Name.IndexOf(searchText, 0, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        this.Items.Add(asset);
+                    }
+
+                }
+            }
+            MaxCount = assets == null ? assets.Count : 0;
+        }
     }
 }

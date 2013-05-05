@@ -47,13 +47,13 @@
             this.glControl1 = new ps2ls.Forms.ModelBrowserGLControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.showAxesButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.showBoundingBoxButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.renderModeWireframeButton = new System.Windows.Forms.ToolStripButton();
             this.renderModeSmoothButton = new System.Windows.Forms.ToolStripButton();
             this.materialSelectionComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.searchModelsTimer = new System.Windows.Forms.Timer(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,6 +88,7 @@
             // 
             // modelsListBox
             // 
+            this.modelsListBox.AssetType = ps2ls.Assets.Pack.Asset.Types.DME;
             this.modelsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.modelsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.modelsListBox.FormattingEnabled = true;
@@ -260,6 +261,16 @@
             this.showAxesButton.Text = "Show Axes";
             this.showAxesButton.Click += new System.EventHandler(this.showAxesButton_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::ps2ls.Properties.Resources.tree_small;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // showBoundingBoxButton
             // 
             this.showBoundingBoxButton.CheckOnClick = true;
@@ -315,16 +326,6 @@
             // 
             this.searchModelsTimer.Interval = 500;
             this.searchModelsTimer.Tick += new System.EventHandler(this.searchModelsTimer_Tick);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::ps2ls.Properties.Resources.tree_small;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // ModelBrowser
             // 

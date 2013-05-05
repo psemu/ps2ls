@@ -616,10 +616,11 @@ void main()
             model = Model.LoadFromStream(asset.Name, memoryStream);
 
             ModelBrowserModelStats1.Model = model;
-
+            textures.Clear();
+            
             for (int i = 0; i < model.Meshes.Length; i++)
             {
-                textures[i] = gray;
+                textures.Add(gray);
             }
 
             materialSelectionComboBox.Items.Clear();

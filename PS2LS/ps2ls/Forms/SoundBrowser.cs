@@ -179,44 +179,11 @@ namespace ps2ls.Forms
 
         private void refreshListBox()
         {
-            
-            soundListBox.Items.Clear();
 
-            List<Asset> assets = new List<Asset>();
-            List<Asset> images = null;
-
-            AssetManager.Instance.AssetsByType.TryGetValue(Asset.Types.FSB, out images);
-
-            if (images != null)
-            {
-                assets.AddRange(images);
-            }
-
-            assets.Sort(new Asset.NameComparer());
-
-            if (assets != null)
-            {
-
-                int i = 0;
-                foreach (Asset asset in assets)
-                {
-                    i++;
-                    if (i >= 1000)
-                    {
-                        i = 0;
-                        this.Update();
-                    }
-                    if (asset.Name.IndexOf(searchBox.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        soundListBox.Items.Add(asset);
-                    }                   
-                      
-                }
-               
-            }
+            soundListBox.PopulateBox(searchBox.Text);
 
             int count = soundListBox.Items.Count;
-            int max = assets != null ? assets.Count : 0;
+            int max = soundListBox.MaxCount;
 
             filesListed.Text = count + "/" + max;
 

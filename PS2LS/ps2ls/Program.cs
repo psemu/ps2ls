@@ -41,6 +41,7 @@ namespace ps2ls
 
             AboutBox.CreateInstance();
             MainForm.CreateInstance();
+            
 
             MaterialDefinitionManager.CreateInstance();
 

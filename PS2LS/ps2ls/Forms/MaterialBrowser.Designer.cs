@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            ps2ls.Cameras.ArcBallCamera arcBallCamera1 = new ps2ls.Cameras.ArcBallCamera();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialBrowser));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.texturesListBox = new ps2ls.Forms.Controls.CustomListBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.modelsCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -38,9 +41,8 @@
             this.clearSearchTexturesText = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exportSelectedTexturesToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.searchTexturesTimer = new System.Windows.Forms.Timer(this.components);
-            this.texturesListBox = new ps2ls.Forms.Controls.CustomListBox();
             this.glControl1 = new ps2ls.Forms.MaterialBrowserGLControl();
+            this.searchTexturesTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,6 +70,22 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 600);
             this.splitContainer1.SplitterDistance = 274;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // texturesListBox
+            // 
+            this.texturesListBox.AssetType = ps2ls.Assets.Pack.Asset.Types.DMA;
+            this.texturesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.texturesListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.texturesListBox.FormattingEnabled = true;
+            this.texturesListBox.Image = global::ps2ls.Properties.Resources.textured1;
+            this.texturesListBox.Items.AddRange(new object[] {
+            "CustomListBox"});
+            this.texturesListBox.Location = new System.Drawing.Point(0, 25);
+            this.texturesListBox.Name = "texturesListBox";
+            this.texturesListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.texturesListBox.Size = new System.Drawing.Size(274, 553);
+            this.texturesListBox.TabIndex = 3;
+            this.texturesListBox.SelectedIndexChanged += new System.EventHandler(this.modelsListBox_SelectedIndexChanged);
             // 
             // statusStrip2
             // 
@@ -145,29 +163,21 @@
             this.exportSelectedTexturesToolStripButton.Text = "Export Selected Models...";
             this.exportSelectedTexturesToolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // searchTexturesTimer
-            // 
-            this.searchTexturesTimer.Interval = 500;
-            this.searchTexturesTimer.Tick += new System.EventHandler(this.searchModelsTimer_Tick);
-            // 
-            // texturesListBox
-            // 
-            this.texturesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.texturesListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.texturesListBox.FormattingEnabled = true;
-            this.texturesListBox.Image = global::ps2ls.Properties.Resources.textured1;
-            this.texturesListBox.Items.AddRange(new object[] {
-            "CustomListBox"});
-            this.texturesListBox.Location = new System.Drawing.Point(0, 25);
-            this.texturesListBox.Name = "texturesListBox";
-            this.texturesListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.texturesListBox.Size = new System.Drawing.Size(274, 553);
-            this.texturesListBox.TabIndex = 3;
-            this.texturesListBox.SelectedIndexChanged += new System.EventHandler(this.modelsListBox_SelectedIndexChanged);
-            // 
             // glControl1
             // 
             this.glControl1.BackColor = System.Drawing.Color.Black;
+            arcBallCamera1.AspectRatio = 0F;
+            arcBallCamera1.DesiredDistance = 2F;
+            arcBallCamera1.DesiredPitch = 0F;
+            arcBallCamera1.DesiredTarget = ((OpenTK.Vector3)(resources.GetObject("arcBallCamera1.DesiredTarget")));
+            arcBallCamera1.DesiredYaw = 0F;
+            arcBallCamera1.FarPlaneDistance = 256F;
+            arcBallCamera1.FieldOfView = 1.291544F;
+            arcBallCamera1.NearPlaneDistance = 0.00390625F;
+            arcBallCamera1.Pitch = 0.7853982F;
+            arcBallCamera1.Position = ((OpenTK.Vector3)(resources.GetObject("arcBallCamera1.Position")));
+            arcBallCamera1.Yaw = -0.7853982F;
+            this.glControl1.Camera = arcBallCamera1;
             this.glControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.glControl1.Location = new System.Drawing.Point(0, 0);
             this.glControl1.Name = "glControl1";
@@ -176,6 +186,11 @@
             this.glControl1.VSync = false;
             this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
             this.glControl1.Resize += new System.EventHandler(this.glControl1_Resize);
+            // 
+            // searchTexturesTimer
+            // 
+            this.searchTexturesTimer.Interval = 500;
+            this.searchTexturesTimer.Tick += new System.EventHandler(this.searchModelsTimer_Tick);
             // 
             // MaterialBrowser
             // 

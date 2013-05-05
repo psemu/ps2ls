@@ -6,11 +6,16 @@ using OpenTK;
 
 namespace ps2ls.Forms.Controls
 {
-    public class CustomGLControl : GLControl
+    public class GLModelVeiwerControl : GLControl
     {
-        public CustomGLControl()
+        
+        
+        public GLModelVeiwerControl()
             : base(new OpenTK.Graphics.GraphicsMode(32, 24, 8, 8), 2, 0, OpenTK.Graphics.GraphicsContextFlags.ForwardCompatible)
         {
         }
+
+
+
     }
 }
