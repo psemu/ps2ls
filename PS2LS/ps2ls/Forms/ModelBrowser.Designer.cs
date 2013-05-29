@@ -32,7 +32,6 @@
             ps2ls.Cameras.ArcBallCamera arcBallCamera1 = new ps2ls.Cameras.ArcBallCamera();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModelBrowser));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.modelsListBox = new ps2ls.Forms.Controls.CustomListBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.modelsCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -43,8 +42,6 @@
             this.showAutoLODModelsButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exportSelectedModelsToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.ModelBrowserModelStats1 = new ps2ls.Forms.ModelBrowserModelStats();
-            this.glControl1 = new ps2ls.Forms.ModelBrowserGLControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.showAxesButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -54,6 +51,9 @@
             this.renderModeSmoothButton = new System.Windows.Forms.ToolStripButton();
             this.materialSelectionComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.searchModelsTimer = new System.Windows.Forms.Timer(this.components);
+            this.modelsListBox = new ps2ls.Forms.Controls.CustomListBox();
+            this.ModelBrowserModelStats1 = new ps2ls.Forms.ModelBrowserModelStats();
+            this.glControl1 = new ps2ls.Forms.MaterialBrowserGLControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,29 +78,13 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.ModelBrowserModelStats1);
             this.splitContainer1.Panel2.Controls.Add(this.glControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.ModelBrowserModelStats1);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
             this.splitContainer1.Size = new System.Drawing.Size(800, 600);
             this.splitContainer1.SplitterDistance = 274;
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
-            // 
-            // modelsListBox
-            // 
-            this.modelsListBox.AssetType = ps2ls.Assets.Pack.Asset.Types.DME;
-            this.modelsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modelsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.modelsListBox.FormattingEnabled = true;
-            this.modelsListBox.Image = global::ps2ls.Properties.Resources.tree_small;
-            this.modelsListBox.Items.AddRange(new object[] {
-            "CustomListBox"});
-            this.modelsListBox.Location = new System.Drawing.Point(0, 25);
-            this.modelsListBox.Name = "modelsListBox";
-            this.modelsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.modelsListBox.Size = new System.Drawing.Size(274, 553);
-            this.modelsListBox.TabIndex = 3;
-            this.modelsListBox.SelectedIndexChanged += new System.EventHandler(this.modelsListBox_SelectedIndexChanged);
             // 
             // statusStrip2
             // 
@@ -195,41 +179,6 @@
             this.exportSelectedModelsToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.exportSelectedModelsToolStripButton.Text = "Export Selected Models...";
             this.exportSelectedModelsToolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // ModelBrowserModelStats1
-            // 
-            this.ModelBrowserModelStats1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ModelBrowserModelStats1.Location = new System.Drawing.Point(0, 439);
-            this.ModelBrowserModelStats1.Model = null;
-            this.ModelBrowserModelStats1.Name = "ModelBrowserModelStats1";
-            this.ModelBrowserModelStats1.Size = new System.Drawing.Size(522, 161);
-            this.ModelBrowserModelStats1.TabIndex = 3;
-            // 
-            // glControl1
-            // 
-            this.glControl1.BackColor = System.Drawing.Color.Black;
-            arcBallCamera1.AspectRatio = 0F;
-            arcBallCamera1.DesiredDistance = 10F;
-            arcBallCamera1.DesiredPitch = 0.7853982F;
-            arcBallCamera1.DesiredTarget = ((OpenTK.Vector3)(resources.GetObject("arcBallCamera1.DesiredTarget")));
-            arcBallCamera1.DesiredYaw = -0.7853982F;
-            arcBallCamera1.FarPlaneDistance = 65536F;
-            arcBallCamera1.FieldOfView = 1.291544F;
-            arcBallCamera1.NearPlaneDistance = 0.00390625F;
-            arcBallCamera1.Pitch = 0.7853982F;
-            arcBallCamera1.Position = ((OpenTK.Vector3)(resources.GetObject("arcBallCamera1.Position")));
-            arcBallCamera1.Yaw = -0.7853982F;
-            this.glControl1.Camera = arcBallCamera1;
-            this.glControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.glControl1.Location = new System.Drawing.Point(0, 27);
-            this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(522, 573);
-            this.glControl1.TabIndex = 1;
-            this.glControl1.VSync = false;
-            this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
-            this.glControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.glControl1_KeyDown);
-            this.glControl1.MouseEnter += new System.EventHandler(this.glControl1_MouseEnter);
-            this.glControl1.Resize += new System.EventHandler(this.glControl1_Resize);
             // 
             // toolStrip1
             // 
@@ -327,6 +276,57 @@
             this.searchModelsTimer.Interval = 500;
             this.searchModelsTimer.Tick += new System.EventHandler(this.searchModelsTimer_Tick);
             // 
+            // modelsListBox
+            // 
+            this.modelsListBox.AssetType = ps2ls.Assets.Pack.Asset.Types.DME;
+            this.modelsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modelsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.modelsListBox.FormattingEnabled = true;
+            this.modelsListBox.Image = global::ps2ls.Properties.Resources.tree_small;
+            this.modelsListBox.Items.AddRange(new object[] {
+            "CustomListBox"});
+            this.modelsListBox.Location = new System.Drawing.Point(0, 25);
+            this.modelsListBox.Name = "modelsListBox";
+            this.modelsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.modelsListBox.Size = new System.Drawing.Size(274, 553);
+            this.modelsListBox.TabIndex = 3;
+            this.modelsListBox.SelectedIndexChanged += new System.EventHandler(this.modelsListBox_SelectedIndexChanged);
+            // 
+            // ModelBrowserModelStats1
+            // 
+            this.ModelBrowserModelStats1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ModelBrowserModelStats1.Location = new System.Drawing.Point(0, 439);
+            this.ModelBrowserModelStats1.Model = null;
+            this.ModelBrowserModelStats1.Name = "ModelBrowserModelStats1";
+            this.ModelBrowserModelStats1.Size = new System.Drawing.Size(522, 161);
+            this.ModelBrowserModelStats1.TabIndex = 3;
+            // 
+            // glControl1
+            // 
+            this.glControl1.BackColor = System.Drawing.Color.Black;
+            this.glControl1.BackgroundColor = System.Drawing.Color.Empty;
+            arcBallCamera1.AspectRatio = 0F;
+            arcBallCamera1.DesiredDistance = 2F;
+            arcBallCamera1.DesiredPitch = 0F;
+            arcBallCamera1.DesiredTarget = ((OpenTK.Vector3)(resources.GetObject("arcBallCamera1.DesiredTarget")));
+            arcBallCamera1.DesiredYaw = 0F;
+            arcBallCamera1.FarPlaneDistance = 256F;
+            arcBallCamera1.FieldOfView = 1.291544F;
+            arcBallCamera1.NearPlaneDistance = 0.00390625F;
+            arcBallCamera1.Pitch = 0.7853982F;
+            arcBallCamera1.Position = ((OpenTK.Vector3)(resources.GetObject("arcBallCamera1.Position")));
+            arcBallCamera1.Yaw = -0.7853982F;
+            this.glControl1.Camera = arcBallCamera1;
+            this.glControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.glControl1.Location = new System.Drawing.Point(0, 27);
+            this.glControl1.Model = null;
+            this.glControl1.Name = "glControl1";
+            this.glControl1.ShowAxis = false;
+            this.glControl1.Size = new System.Drawing.Size(522, 412);
+            this.glControl1.TabIndex = 4;
+            this.glControl1.VSync = false;
+            this.glControl1.Wireframe = false;
+            // 
             // ModelBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,7 +334,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "ModelBrowser";
             this.Size = new System.Drawing.Size(800, 600);
-            this.Load += new System.EventHandler(this.ModelBrowserControl_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -364,7 +363,6 @@
         private System.Windows.Forms.ToolStripStatusLabel modelsCountToolStripStatusLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton exportSelectedModelsToolStripButton;
-        private ModelBrowserGLControl glControl1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton renderModeWireframeButton;
         private System.Windows.Forms.ToolStripButton renderModeSmoothButton;
@@ -376,5 +374,6 @@
         private System.Windows.Forms.ToolStripButton showAutoLODModelsButton;
         private System.Windows.Forms.ToolStripComboBox materialSelectionComboBox;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private MaterialBrowserGLControl glControl1;
     }
 }
